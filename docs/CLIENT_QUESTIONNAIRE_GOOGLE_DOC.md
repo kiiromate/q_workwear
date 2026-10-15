@@ -16,30 +16,34 @@ To make the website accurately reflect your business and allow customers to cont
 
 ## 1. Contact Information & Location
 
-*This is what customers in Kigali will see when they want to order uniforms or request a quote.*
+*This is what customers in Kigali will see when they want to order uniforms or request a quote, and how we will communicate with you during the project.*
 
-1. **Official WhatsApp Number:**  
-   *(The WhatsApp line where you want to receive customer quotation requests and photos)*  
-   `Answer: `
-
-2. **Telephone Line for Voice Calls:**  
-   *(Is it the same as WhatsApp, or a different phone number?)*  
-   `Answer: `
-
-3. **Official Business Email Address:**  
+1. **Official Business Email Address:**  
    *(e.g., info@qworkwear.rw, or your current business Gmail)*  
    `Answer: `
 
-4. **Workshop Location / Address in Kigali:**  
+2. **Personal / Direct Emails for Future Project Correspondence:**  
+   - Quddus Email: `___________________________`
+   - Tinah Email: `___________________________`
+
+3. **Official WhatsApp Number:**  
+   *(The WhatsApp line where you want to receive customer quotation requests and photos)*  
+   `Answer: `
+
+4. **Telephone Line for Voice Calls:**  
+   *(Is it the same as WhatsApp, or a different phone number?)*  
+   `Answer: `
+
+5. **Workshop Location / Address in Kigali:**  
    *(Which neighborhood or building are you located in? e.g., Kicukiro, Nyarugenge, Gasabo, near a landmark?)*  
    `Answer: `
 
-5. **Do you accept walk-in clients, or by appointment only?**  
+6. **Do you accept walk-in clients, or by appointment only?**  
    - [ ] By appointment only  
    - [ ] Walk-ins welcome during working hours  
    - [ ] We travel to the client’s office/hotel for fittings  
 
-6. **Standard Working Hours:**  
+7. **Standard Working Hours:**  
    *(e.g., Monday – Saturday, 8:00 AM – 6:00 PM)*  
    `Answer: `
 

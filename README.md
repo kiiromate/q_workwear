@@ -2,7 +2,10 @@
 
 Official business portfolio, product catalogue, and client quotation website for **Q Workwear** in Kigali, Rwanda, owned and managed by **Quddus (Q)** and **Tinah**.
 
-Built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**, configured for zero-cost static export to **Cloudflare Pages**.
+- 🌐 **Live Website Preview:** [https://qworkwear.vercel.app](https://qworkwear.vercel.app)
+- 💻 **GitHub Repository:** [https://github.com/kiiromate/q_workwear](https://github.com/kiiromate/q_workwear)
+
+Built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**, configured for zero-cost static deployment to **Vercel** and **Cloudflare Pages**.
 
 ---
 

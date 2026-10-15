@@ -2,7 +2,9 @@
 
 **Client:** Q Workwear (Kigali, Rwanda)  
 **Recipients:** Quddus (Q) & Tinah  
-**Purpose:** Present the website demonstration, align on the atelier design direction inspired by Afrikanda Holdings, and request essential business information.
+**Live Preview URL:** [https://qworkwear.vercel.app](https://qworkwear.vercel.app)  
+**GitHub Repository:** [https://github.com/kiiromate/q_workwear](https://github.com/kiiromate/q_workwear)  
+**Purpose:** Share the live working preview online, align on the atelier showcase design, ask for their official email addresses for future project correspondence, and provide the intake links.
 
 ---
 
@@ -12,32 +14,30 @@
 
 > **Hi Q & Tinah! 👋**
 >
-> Hope you’re having a great week!
+> Hope you’re having a fantastic week!
 >
-> We’ve put together the first live demonstration of the **Q Workwear** website, and we’re excited to share it with you for your thoughts.
+> We have deployed the first live working preview of the new **Q Workwear** website online so you can test it directly on your phones and laptops:
+> 🌐 **Live Website Preview:** https://qworkwear.vercel.app
 >
-> As you requested, we drew inspiration from the clean, high-end showcase style of **Afrikanda Holdings (Exotiká / Hospitality Collection)**, but tailored it specifically to your business as a master uniform atelier. 
+> As requested, we drew inspiration from the clean, high-end showcase style of **Afrikanda Holdings (Exotiká / Hospitality Collection)**, but grounded it in your craft as a bespoke Kigali tailoring atelier.
 >
-> 🧵 **What we designed for you:**
-> * A bold, cinematic design themed around a **master tailor’s cutting table**—complete with measuring tape details, running stitches, fabric weight tags, and your signature crimson red brand palette (`#E0483A`).
+> 🧵 **What’s live for you to test:**
+> * **Master Atelier Aesthetic:** Styled like an artisan cutting table—complete with yellow measuring tape accents, running basting stitches, fabric weight badges (e.g. 300 GSM drill, 12oz duck canvas), and your signature crimson red brand accents.
 > * **4 Dedicated Showcase Collections:**
->   1. **Corporate & Office Uniforms** (Executive shirts, suiting, blazers)
->   2. **Hospitality & Culinary Wear** (Chef coats, canvas aprons, waitstaff polos)
->   3. **Industrial & Safety Workwear** (Heavy cotton overalls, reflective vests, cargo work pants)
->   4. **Branded Apparel & Promotional** (Embroidered piqué polos, crewnecks, twill caps)
-> * **Direct WhatsApp Quotation Actions:** Customers can click once on any uniform style to send you a prefilled inquiry with the exact garment and specs they need.
-> * Built to load instantly on mobile phones anywhere in Kigali with zero server costs on Cloudflare.
+>   1. **Corporate & Office Uniforms** (Executive suiting, oxford shirts, blazers)
+>   2. **Hospitality & Culinary Wear** (Chef jackets, duck canvas aprons, server attire)
+>   3. **Industrial & Heavy Duty** (Heavy drill overalls, high-vis safety vests)
+>   4. **Branded Apparel** (Embroidered piqué polos, crewnecks, twill caps)
+> * **Direct WhatsApp Quotations:** Every garment card has a direct quotation button that connects straight to WhatsApp with pre-filled specs.
 >
-> 📋 **To make this 100% reflective of your actual business, we need just a few details from you:**
-> 1. Your official WhatsApp and telephone lines for client inquiries.
-> 2. Your workshop location/neighborhood in Kigali for customer fittings.
-> 3. Your confirmation on the uniform categories and minimum order quantities (MOQ).
-> 4. An initial batch of photos (even smartphone photos of finished uniforms, your workshop, or embroidery close-ups).
+> 📋 **Next Steps & Contact Details:**
+> 1. **Your Email Addresses:** Could you please share your preferred email address(es) for both of you? We'll use this for official project documents, formal design approvals, and future communication.
+> 2. **Short Questionnaire:** We prepared a quick, simple intake questionnaire (takes ~10 mins):  
+>    👉 **[Insert Google Doc Link Here]**
+> 3. **Photos & Assets Folder:** You can drop any photos of your workshop, tailors, or completed uniforms directly into our shared Google Drive:  
+>    📁 **[Insert Google Drive Folder Link Here]**
 >
-> We prepared a quick, simple questionnaire that takes about 10–15 minutes to fill out:
-> 👉 **[Link to Google Doc Questionnaire]**
->
-> Let’s schedule a brief 15-minute call or in-person review this week so I can walk you through the live site on laptop and mobile!
+> Take a look at https://qworkwear.vercel.app when you get a moment, and let us know what you think! We can also schedule a quick 15-minute walkthrough whenever convenient.
 >
 > Warm regards,  
 > **[Your Name]**
@@ -46,28 +46,31 @@
 
 ## Option 2: Formal Email
 
-*Subject: Live Preview & Content Input for Q Workwear Website*
+*Subject: Live Preview Link & Content Intake for Q Workwear Website*
 
 > **Dear Quddus and Tinah,**
 >
 > I hope this email finds you well.
 >
-> I am delighted to share that the initial functional build of the **Q Workwear** website is now ready for your review.
+> I am delighted to announce that the first live functional build of the **Q Workwear** website is now online and available for your review:
+> 
+> 🌐 **Live Website Preview:** [https://qworkwear.vercel.app](https://qworkwear.vercel.app)  
+> 💻 **Project Repository:** [https://github.com/kiiromate/q_workwear](https://github.com/kiiromate/q_workwear)
 >
-> Following your brief, we studied the showcase structure and aesthetic of **Afrikanda Holdings (Exotiká and the Hospitality Collection)**. Our goal was to capture that same sense of clarity, prestige, and high-impact visual presentation, while grounding the design completely in the craftsmanship of a bespoke Kigali tailoring atelier.
+> Following your brief, we studied the presentation style of **Afrikanda Holdings (Exotiká / Hospitality Collection)**. Our goal was to capture that same sense of prestige, clean navigation, and photographic presentation, while making the site deeply authentic to Q Workwear's identity as a Rwandan tailoring atelier.
 >
-> ### Key Features in the New Website:
-> 1. **Cinematic Atelier Aesthetic:** Styled with subtle tailoring elements—workshop cutting table layers, measuring tape accents, garment specification tags, and high-contrast editorial photography featuring your official brand palette.
-> 2. **Category-Led Product Catalogue:** 4 organized collections (Corporate, Hospitality, Industrial, and Branded Apparel) featuring 16 demonstration garment styles with fabric weights (e.g., 300 GSM Cotton Drill, 12oz Duck Canvas) and feature breakdowns.
-> 3. **Frictionless WhatsApp Quotes:** Prospective procurement managers and hotel directors can tap once from any product card to start a WhatsApp discussion with you, prefilled with the exact garment name and category.
-> 4. **Completed Work / Portfolio Archive:** Structured case studies showing uniform scopes, deliverables, fabric choices, and turnaround times.
-> 5. **High-Speed Mobile Optimization:** Engineered to load in less than a second on mobile connections across East Africa, hosted on Cloudflare Pages with zero monthly server maintenance fees.
+> ### Highlights of the Live Build:
+> 1. **Cinematic Atelier Aesthetic:** Styled with authentic garment workshop details—measuring tape ribbons, basting stitches, fabric density callouts (300 GSM drill, 12oz duck canvas), and your bold brand palette.
+> 2. **Catalogue & Lookbook:** 4 structured collections covering corporate, hospitality, industrial, and branded apparel with high-resolution imagery and specification tags.
+> 3. **Frictionless WhatsApp Quotes:** Prospective procurement managers can tap once from any product card to start a WhatsApp conversation with pre-filled order specs.
+> 4. **Mobile Performance:** Pre-rendered static architecture with sub-second page loads across Rwanda and zero ongoing server hosting costs.
 >
-> ### How You Can Help Us Finalize the Site:
-> To transition the demo into your official production website, we need your input on a few operational details, contact channels, and initial photography.
->
-> We have organized everything into a simple, 1-page Google Doc questionnaire:  
-> **Google Doc Questionnaire:** [Insert Google Doc Link Here]
+> ### What We Need to Finalize Production:
+> 1. **Preferred Emails:** Please confirm your primary email address(es) for ongoing correspondence, invoices, and design sign-offs.
+> 2. **Client Questionnaire:** Please review and complete our short intake questionnaire:  
+>    👉 **Google Doc:** [Insert Google Doc Link Here]
+> 3. **Workshop & Product Photography:** Please upload any existing photos of your workshop, tailors at work, and finished uniforms to our shared Google Drive folder:  
+>    📁 **Google Drive:** [Insert Google Drive Folder Link Here]
 >
 > ### Recommended Next Step:
 > I would love to walk you through the live demonstration on screen or in person so you can experience the navigation, category filters, and mobile layouts firsthand.
