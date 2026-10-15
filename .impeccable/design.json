@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T17:34:53.069098+00:00",
+  "title": "Design System: Q Workwear",
+  "extensions": {
+    "motion": [
+      {
+        "name": "collection-reframe",
+        "value": "transform .65s cubic-bezier(.22,1,.36,1)",
+        "purpose": "Small linked-image reframe; disabled under reduced motion."
+      },
+      {
+        "name": "control-transition",
+        "value": ".2s",
+        "purpose": "Colour, background and border transitions."
+      }
+    ],
+    "shadows": [],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "navigation",
+        "value": "1050px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The quotation action.",
+      "html": "<button class=\"ds-primary\">Request a quote</button>",
+      "css": ".ds-primary{font:500 16px Barlow,sans-serif;min-height:48px;padding:12px 24px;background:var(--brand,#b73329);color:white;border:1px solid transparent;border-radius:0;cursor:pointer}.ds-primary:hover{background:var(--brand-hover,#93271f)}.ds-primary:focus-visible{outline:2px solid var(--brand,#b73329);outline-offset:5px}"
+    },
+    {
+      "name": "Outline button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "A restrained alternative action.",
+      "html": "<button class=\"ds-outline\">Explore collections</button>",
+      "css": ".ds-outline{font:500 16px Barlow,sans-serif;min-height:48px;padding:12px 24px;color:var(--ink,#202421);background:transparent;border:1px solid var(--line,#d9dcd6);border-radius:0}.ds-outline:hover{border-color:var(--ink,#202421)}.ds-outline:focus-visible{outline:2px solid var(--brand,#b73329);outline-offset:5px}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "description": "Persistent label and square, readable field.",
+      "html": "<label class=\"ds-field\">Your name<input autocomplete=\"name\"></label>",
+      "css": ".ds-field{display:grid;gap:10px;font:500 16px Barlow,sans-serif}.ds-field input{font:400 16px Barlow,sans-serif;min-height:50px;padding:14px 16px;border:1px solid #a2a8a0;border-radius:0;background:transparent;color:var(--ink,#202421)}.ds-field input:focus-visible{outline:2px solid var(--brand,#b73329);outline-offset:5px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Quiet active underline.",
+      "html": "<nav class=\"ds-nav\"><a aria-current=\"page\" href=\"#collections\">Collections</a><a href=\"#about\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;font:400 16px Barlow,sans-serif}.ds-nav a{display:flex;align-items:center;min-height:48px;color:var(--muted,#5c615d);text-decoration:none}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--ink,#202421);text-decoration:underline;text-decoration-color:var(--brand,#b73329);text-underline-offset:.25em}.ds-nav a:focus-visible{outline:2px solid var(--brand,#b73329);outline-offset:5px}"
+    },
+    {
+      "name": "Collection filter",
+      "kind": "custom",
+      "description": "Native selection control without pill chrome.",
+      "html": "<div class=\"ds-filters\"><button aria-pressed=\"true\">All</button><button aria-pressed=\"false\">Corporate</button></div>",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:28px;border-bottom:1px solid var(--line,#d9dcd6)}.ds-filters button{font:400 16px Barlow,sans-serif;min-height:48px;padding:10px 0;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted,#5c615d)}.ds-filters button[aria-pressed=\"true\"]{border-bottom-color:var(--brand,#b73329);color:var(--ink,#202421)}.ds-filters button:focus-visible{outline:2px solid var(--brand,#b73329);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workwear Showroom",
+    "overview": "A restrained commercial showcase: the garments carry the image, the typography carries the offer, and the interface stays quiet. The visual system is flat and light so fabric colour, cut and material remain legible on mobile and desktop.",
+    "keyCharacteristics": [
+      "Unobscured imagery and open layouts.",
+      "One sans-serif family with measured scale changes.",
+      "A single red action colour, not scattered decorative accents.",
+      "Concise headings without stacked labels or badges."
+    ],
+    "rules": [
+      {
+        "name": "The Visible Product Rule",
+        "body": "Photography is not darkened, tinted or hidden behind text to manufacture atmosphere. Lighting belongs in the image.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Heading Rule",
+        "body": "A section earns a heading and useful content, not a kicker, heading, subtitle and explanatory footer repeating the same idea.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do use a few strong images repeatedly rather than commissioning filler for every row.",
+      "Do keep product names short and action wording literal.",
+      "Do preserve visible keyboard focus and reduced-motion behaviour.",
+      "Do keep verification notes in internal documentation."
+    ],
+    "donts": [
+      "Don't add tailoring-ruler stripes, stitch borders, floating labels or ornamental cards.",
+      "Don't obscure the product with gradients or dark overlays.",
+      "Don't use fictional projects, invented quotes or unsupported specifications as proof.",
+      "Don't treat missing final imagery as permission to introduce decorative UI."
+    ]
+  }
+}

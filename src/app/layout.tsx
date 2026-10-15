@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { ContentStatusNotice } from '@/components/common/ContentStatusNotice';
 import { siteConfig } from '@/content/site';
 import { config } from '@/lib/config';
 
@@ -51,10 +50,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="flex min-h-full flex-col bg-[#0C0B0A] text-stone-200 antialiased">
-        <ContentStatusNotice />
+      <body className="flex min-h-full flex-col antialiased">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

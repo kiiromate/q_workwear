@@ -1,0 +1,71 @@
+import assert from 'node:assert/strict';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { chromium } from 'playwright';
+import AxeBuilder from '@axe-core/playwright';
+
+const origin = process.env.TEST_URL || 'http://localhost:3016';
+const evidence = process.env.TEST_OUTPUT || '.impeccable/review';
+const routes = ['/', '/products/', '/work/', '/about/', '/contact/'];
+const viewports = [360, 390, 768, 1024, 1440];
+const browser = await chromium.launch({ headless: true });
+const results = [];
+await mkdir(evidence, { recursive: true });
+
+try {
+  for (const width of viewports) {
+    const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
+    const page = await context.newPage();
+    const errors = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    for (const route of routes) {
+      const response = await page.goto(new URL(route, origin).href, { waitUntil: 'networkidle' });
+      assert.equal(response.status(), 200, `${route} response`);
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        const images = [...document.images];
+        images.forEach((image) => { image.loading = 'eager'; });
+        await Promise.all(images.map((image) => image.decode().catch(() => {})));
+      });
+      assert.equal(await page.locator('main h1').count(), 1, `${route}: one main heading`);
+      const state = await page.evaluate(() => ({
+        overflow: document.documentElement.scrollWidth > innerWidth,
+        failedImages: [...document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.src),
+        text: document.querySelector('main').innerText,
+      }));
+      assert.equal(state.overflow, false, `${route} overflow at ${width}px`);
+      assert.deepEqual(state.failedImages, [], `${route} broken images`);
+      assert.doesNotMatch(state.text, /\b(Ethos|Pathos|Logos|provisional|demonstration only|draft narrative|pending client|EN ISO 20471|300 GSM)\b/i, `${route} editorial leaks`);
+      const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+      assert.deepEqual(axe.violations.map(({ id, nodes }) => ({ id, targets: nodes.map((node) => node.target) })), [], `${route} accessibility at ${width}px`);
+      if (width === 390 || width === 1440) {
+        await page.evaluate(() => scrollTo(0, 0));
+        const name = route === '/' ? (width === 390 ? 'mobile' : 'desktop') : `${route.split('/')[1]}-${width}`;
+        await page.screenshot({ path: `${evidence}/${name}.png`, fullPage: true });
+      }
+      results.push({ route, width, status: 'pass' });
+    }
+    assert.deepEqual(errors, [], `browser errors at ${width}px`);
+    await page.close();
+  }
+
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.goto(origin, { waitUntil: 'networkidle' });
+  const toggle = page.getByRole('button', { name: 'Open navigation', exact: true });
+  await toggle.click();
+  assert.equal(await page.locator('#mobile-navigation').evaluate((dialog) => dialog.open), true, 'mobile menu opens');
+  await page.keyboard.press('Tab');
+  assert.equal(await page.locator('#mobile-navigation').evaluate((dialog) => dialog.contains(document.activeElement)), true, 'focus remains in dialog');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#mobile-navigation').evaluate((dialog) => dialog.open), false, 'Escape closes menu');
+  assert.equal(await toggle.evaluate((element) => document.activeElement === element), true, 'menu restores focus');
+  await toggle.click();
+  await page.getByRole('navigation', { name: 'Mobile navigation', exact: true }).getByRole('link', { name: 'Contact', exact: true }).click();
+  await page.waitForURL('**/contact/');
+  assert.equal(await page.locator('#mobile-navigation').evaluate((dialog) => dialog.open), false, 'navigation closes menu');
+  results.push({ interaction: 'mobile navigation, focus containment, Escape and route change', status: 'pass' });
+  await page.close();
+  await writeFile(`${evidence}/ui-results.json`, JSON.stringify(results, null, 2));
+  console.log(JSON.stringify({ status: 'pass', layoutChecks: results.filter((result) => result.route).length, interactions: results.filter((result) => result.interaction), evidence }, null, 2));
+} finally {
+  await browser.close();
+}

@@ -1,7 +1,7 @@
 import { siteConfig } from '@/content/site';
 
 export const config = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://q-workwear.pages.dev',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://qworkwear.vercel.app',
   isProduction: process.env.NODE_ENV === 'production',
   defaultOgImage: '/images/logo/q-workwear-original.png',
   keywords: [

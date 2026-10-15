@@ -1,63 +1,37 @@
-# Delivery Plan & Launch Roadmap
+# Q Workwear — delivery roadmap
 
-**Project:** Q Workwear Website Foundation & Production Launch  
-**Total Development Budget:** 180,000 RWF  
-**Estimated Domain Budget:** 15,000 RWF (Annual)  
-**Target Delivery Window:** 5–7 days following client asset delivery  
-**Document Status:** Foundation Build Complete — Awaiting Client Review  
-**Last Updated:** October 2026  
+## 1. Complete the website
 
----
+Build a restrained, photography-led website with five routes: Home, Collections, Lookbook, About and Contact. Keep the four collection areas easy to browse. Enquiry links carry the selected garment into the quote form.
 
-## 1. Project Phase Breakdown
+The quote form prepares an email in the visitor’s mail application; it does not submit to a server. The business email supplied for the project is `qworkwearsolution@gmail.com`. Phone and WhatsApp channels are shown only after approved contact numbers are configured.
 
-```
-[ Phase 1: Foundation Build ]  -->  [ Phase 2: Client Demo & Feedback ]  -->  [ Phase 3: Asset Intake ]  -->  [ Phase 4: Production Launch ]
-           (COMPLETE)                            (CURRENT)                           (PENDING)                        (PENDING)
-- PRD & Architecture                - Walkthrough with Q & Tinah         - Collect WhatsApp & phone         - Connect custom domain
-- Design System & Logo Integration  - Collect feedback on categories    - Receive initial photos           - Configure Cloudflare Pages
-- 5 Core Responsive Pages           - Align on pricing / MOQ rules       - Refine draft editorial copy      - Verify live SSL & SEO
-- Local Testing & Export Build      - Approve visual identity            - Replace image placeholders       - Final client handover
-```
+## 2. Refine with Quddus and Tinah
 
----
+Review the finished direction together and adjust to taste. Confirm the garment range and preferred contact channels. Do not ask the clients to design the site or write it from scratch.
 
-## 2. Milestone Tracking
+Unknown production details—such as minimum quantities, lead times, safety ratings and payment terms—must not be turned into website claims. Discuss them per order until the business approves published policies.
 
-### Milestone 1: Technical & Design Foundation (Status: COMPLETE ✅)
-- [x] Initialized Next.js 15+ App Router project with TypeScript and Tailwind CSS v4.
-- [x] Configured static export (`output: 'export'`) for Cloudflare Pages.
-- [x] Extracted official color palette (`#E0483A` brand red, `#18181B` dark slate, `#FBF9F8` warm canvas) from client logo.
-- [x] Created transparent PNG and scalable vector SVG logo assets in `public/images/logo/`.
-- [x] Built core responsive components (Header, Footer, MobileNav, Button, Badge, ProductCard, ProjectCard, PlaceholderImage, WhatsApp CTA).
-- [x] Implemented all 5 core MVP pages (`Home`, `About`, `Products`, `Our Work`, `Contact`).
-- [x] Implemented single-source-of-truth content architecture in `src/content/`.
-- [x] Completed comprehensive documentation: `PRD.md`, `DESIGN_SYSTEM.md`, `ARCHITECTURE.md`, `CLIENT_CONTENT_INTAKE.md`, `CONTENT_STATUS.md`.
+## 3. Add five images
 
-### Milestone 2: Client Demonstration & Review (Status: CURRENT 🎯)
-- [ ] Present running local website to Quddus and Tinah.
-- [ ] Review category breakdown (Corporate, Hospitality, Industrial, Branded) and adjust based on actual factory capabilities.
-- [ ] Walk through the contextual WhatsApp quotation funnel.
-- [ ] Review and adjust draft editorial story on the About page.
+Use the five prompts in `IMAGE_GENERATION_PROMPTS.md`: one craft image and four collection images. These are reused throughout the site. Replace the existing image files without changing the layout.
 
-### Milestone 3: Client Asset & Content Population (Status: UPCOMING ⏳)
-- [ ] Receive verified WhatsApp phone number and voice calling contact.
-- [ ] Receive physical workshop address / neighborhood in Kigali.
-- [ ] Receive initial batch of product and workshop photos (following `CLIENT_CONTENT_INTAKE.md`).
-- [ ] Drop photography into `public/images/products/` and `public/images/projects/`.
-- [ ] Update `src/content/site.ts`, `catalog.ts`, and `projects.ts` with confirmed data.
+Generated images illustrate a garment direction, not real founders, premises or completed client orders. Use real project photographs only with permission.
 
-### Milestone 4: Production Deployment & Handover (Status: UPCOMING ⏳)
-- [ ] Register domain name (`qworkwear.rw` or alternative) within the 15,000 RWF budget.
-- [ ] Connect GitHub repository to Cloudflare Pages (Build: `pnpm run build`, Output: `out`).
-- [ ] Configure custom domain and automated Cloudflare SSL certificate.
-- [ ] Run production Lighthouse audit verifying >90 on performance and accessibility.
-- [ ] Hand over website maintenance instructions and operational documentation to Q & Tinah.
+## 4. Verify and publish
 
----
+Before publication:
+- Run TypeScript, production export and browser checks.
+- Check the pages on narrow mobile, tablet and desktop viewports.
+- Check menu focus, collection filtering, enquiry context and generated email drafts.
+- Verify the actual enquiry destination by sending a test with approval. Opening a mail draft does not prove delivery.
+- If WhatsApp is enabled, test the approved number and message on a phone.
+- Publish, then check the exact public URL before sharing it.
 
-## 3. Immediate Action Items for Delivery Lead
+Agree a launch date after final assets, business details and domain requirements are known. Do not represent local work as deployed or promise an unverified delivery window.
 
-1. **Host Client Demo:** Run `pnpm run dev` and walk Quddus and Tinah through the site on both laptop and mobile viewport.
-2. **Issue Intake Checklist:** Share the 1-page asset request from `CLIENT_CONTENT_INTAKE.md` via WhatsApp.
-3. **Confirm Domain Choice:** Check availability of `.rw` vs `.com` domains and secure client approval before purchase.
+## Commercial handoff
+
+Keep the agreed quotation and SukuSuku exchange in invoice `QW-WEB-20261015-001`. Domain registration needs a confirmed name, availability and price; the quoted allowance is not a guarantee that every `.rw` or `.com` domain fits it.
+
+Google Drive sharing and recipient access are separate actions. Do not claim they are complete until the folder and permissions have been checked.

@@ -1,45 +1,37 @@
-# Q Workwear Website — Delivery Roadmap & Milestones
+# Q Workwear — delivery roadmap
 
-**Target Launch:** 5–7 Days post client content intake  
-**Client Team:** Quddus (`qworkwearsolution@gmail.com`) & Tinah (`uwamwizachristinah@gmail.com`)  
-**Lead Consultant:** Jonathan Binamungu Kaze Keza (`jonathan@kazekeza.com` / `+250 784 530 999`)  
+## 1. Complete the website
 
----
+Build a restrained, photography-led website with five routes: Home, Collections, Lookbook, About and Contact. Keep the four collection areas easy to browse. Enquiry links carry the selected garment into the quote form.
 
-## Project Timeline & Phases
+The quote form prepares an email in the visitor’s mail application; it does not submit to a server. The business email supplied for the project is `qworkwearsolution@gmail.com`. Phone and WhatsApp channels are shown only after approved contact numbers are configured.
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 📅 PHASE 1: WORKING PROTOTYPE (COMPLETED)                                   │
-│ • Live interactive preview online at https://qworkwear.vercel.app            │
-│ • 4 collections, 16 demo garments, tailor table atelier design              │
-│ • WhatsApp quotation buttons tested and verified                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 📋 PHASE 2: CLIENT CONTENT & PHOTO INTAKE (DAYS 1–3)                        │
-│ • Q & Tinah review questionnaire (contact details, verified WhatsApp)       │
-│ • Upload raw workshop & uniform photos to Google Drive                      │
-│ • Align on official domain name (e.g. qworkwear.rw / qworkwear.com)         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ ✂️ PHASE 3: CUSTOMIZATION & REFINEMENT (DAYS 4–5)                           │
-│ • Replace demo photos with Q Workwear's real products & workshop            │
-│ • Connect verified WhatsApp numbers to quotation buttons                    │
-│ • Refine copy with confirmed MOQ, turnaround times, and workshop address    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 🚀 PHASE 4: PRODUCTION LAUNCH & HANDOFF (DAYS 6–7)                           │
-│ • Register and connect custom official domain                               │
-│ • Final quality assurance on mobile screens                                 │
-│ • SukuSuku apparel production exchange delivery & project completion        │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+## 2. Refine with Quddus and Tinah
 
----
+Review the finished direction together and adjust to taste. Confirm the garment range and preferred contact channels. Do not ask the clients to design the site or write it from scratch.
 
-## Deliverables Checklist
+Unknown production details—such as minimum quantities, lead times, safety ratings and payment terms—must not be turned into website claims. Discuss them per order until the business approves published policies.
 
-- [x] Next.js 15 App Router codebase with static export (`out/`)
-- [x] Vercel & Cloudflare Pages continuous deployment setup
-- [x] Atelier design tokens (tape measure rulers, basting stitches, crimson palette)
-- [x] Official Quotation & Proforma Invoice (`QW-WEB-20261015-001`)
-- [ ] Confirmed client contact numbers & workshop address
-- [ ] Client workshop photography
-- [ ] Official custom domain registration
+## 3. Add five images
+
+Use the five prompts in `IMAGE_GENERATION_PROMPTS.md`: one craft image and four collection images. These are reused throughout the site. Replace the existing image files without changing the layout.
+
+Generated images illustrate a garment direction, not real founders, premises or completed client orders. Use real project photographs only with permission.
+
+## 4. Verify and publish
+
+Before publication:
+- Run TypeScript, production export and browser checks.
+- Check the pages on narrow mobile, tablet and desktop viewports.
+- Check menu focus, collection filtering, enquiry context and generated email drafts.
+- Verify the actual enquiry destination by sending a test with approval. Opening a mail draft does not prove delivery.
+- If WhatsApp is enabled, test the approved number and message on a phone.
+- Publish, then check the exact public URL before sharing it.
+
+Agree a launch date after final assets, business details and domain requirements are known. Do not represent local work as deployed or promise an unverified delivery window.
+
+## Commercial handoff
+
+Keep the agreed quotation and SukuSuku exchange in invoice `QW-WEB-20261015-001`. Domain registration needs a confirmed name, availability and price; the quoted allowance is not a guarantee that every `.rw` or `.com` domain fits it.
+
+Google Drive sharing and recipient access are separate actions. Do not claim they are complete until the folder and permissions have been checked.

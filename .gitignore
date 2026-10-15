@@ -28,3 +28,7 @@ Thumbs.db
 scratch/
 .system_generated/
 .vercel
+
+# Local visual review evidence
+.impeccable/review/
+.impeccable/concept-seeds/
