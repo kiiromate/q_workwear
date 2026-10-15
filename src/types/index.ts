@@ -8,6 +8,8 @@ export interface ProductCategory {
   iconName: 'Building2' | 'UtensilsCrossed' | 'HardHat' | 'Sparkles';
   badgeText: string;
   garmentCountEstimate: string;
+  image: string;
+  fabricBadge: string;
 }
 
 export interface Product {

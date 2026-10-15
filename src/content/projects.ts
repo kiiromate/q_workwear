@@ -17,6 +17,7 @@ export const projects: Project[] = [
     clientSector: 'Hospitality & Luxury Tourism',
     categorySlug: 'hospitality',
     location: 'Kigali, Rwanda',
+    image: '/images/showcase/cat-hospitality-culinary.webp',
     summary:
       'Demonstration of a full 3-department uniform suite: tailored reception waistcoats, breathable chef jackets with cooling mesh, and heavy-duty canvas aprons for the espresso lounge.',
     deliverables: [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     clientSector: 'Transport & Industrial Logistics',
     categorySlug: 'industrial',
     location: 'Kigali Free Zone & Regional Routes',
+    image: '/images/showcase/cat-industrial-safety.webp',
     summary:
       'Demonstration of an industrial safety wardrobe designed for heavy lifting, grease resistance, and roadside nighttime visibility.',
     deliverables: [
@@ -52,6 +54,7 @@ export const projects: Project[] = [
     clientSector: 'Banking & Financial Advisory',
     categorySlug: 'corporate',
     location: 'Kigali CBD',
+    image: '/images/showcase/cat-corporate-suiting.webp',
     summary:
       'Demonstration of standardized corporate branch attire balancing sharp elegance with all-day comfort for teller and loan advisory personnel.',
     deliverables: [
@@ -69,6 +72,7 @@ export const projects: Project[] = [
     clientSector: 'Technology & International Events',
     categorySlug: 'branded',
     location: 'Kigali Convention Centre',
+    image: '/images/showcase/cat-branded-apparel.webp',
     summary:
       'Demonstration of a high-volume branded apparel run for event organizers, technical stage crew, and VIP delegates.',
     deliverables: [

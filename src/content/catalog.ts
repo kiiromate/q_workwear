@@ -10,6 +10,8 @@ export const categories: ProductCategory[] = [
     iconName: 'Building2',
     badgeText: 'Executive & Front Desk',
     garmentCountEstimate: '4 Demo Styles',
+    image: '/images/showcase/cat-corporate-suiting.webp',
+    fabricBadge: 'Oxford Twill & Poly-Wool Suiting',
   },
   {
     id: 'hospitality',
@@ -20,6 +22,8 @@ export const categories: ProductCategory[] = [
     iconName: 'UtensilsCrossed',
     badgeText: 'Kitchen & Service',
     garmentCountEstimate: '4 Demo Styles',
+    image: '/images/showcase/cat-hospitality-culinary.webp',
+    fabricBadge: '12oz Washed Duck Canvas & Cool-Vent',
   },
   {
     id: 'industrial',
@@ -30,6 +34,8 @@ export const categories: ProductCategory[] = [
     iconName: 'HardHat',
     badgeText: 'Heavy-Duty & PPE',
     garmentCountEstimate: '4 Demo Styles',
+    image: '/images/showcase/cat-industrial-safety.webp',
+    fabricBadge: '300 GSM Heavy Cotton Drill & EN ISO 20471',
   },
   {
     id: 'branded',
@@ -40,6 +46,8 @@ export const categories: ProductCategory[] = [
     iconName: 'Sparkles',
     badgeText: 'Events & Everyday',
     garmentCountEstimate: '4 Demo Styles',
+    image: '/images/showcase/cat-branded-apparel.webp',
+    fabricBadge: '220 GSM Piqué Cotton & 3D Embroidery',
   },
 ];
 

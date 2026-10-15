@@ -15,12 +15,12 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all">
+      <header className="sticky top-0 z-40 w-full bg-[#12100E]/95 backdrop-blur-md border-b border-stone-800 transition-all text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Logo */}
             <div className="flex items-center gap-8">
-              <Logo />
+              <Logo theme="dark" />
             </div>
 
             {/* Desktop Navigation */}
@@ -40,8 +40,8 @@ export function Header() {
                     href={item.href}
                     className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-colors duration-150 ${
                       isActive
-                        ? 'text-[#E0483A] bg-[#FDF2F0]'
-                        : 'text-zinc-700 hover:text-zinc-950 hover:bg-stone-50'
+                        ? 'text-white bg-stone-800'
+                        : 'text-stone-300 hover:text-white hover:bg-stone-800/60'
                     }`}
                   >
                     {item.label}
@@ -70,7 +70,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setIsMobileNavOpen(true)}
-                className="lg:hidden p-2.5 rounded-xl text-zinc-700 hover:text-zinc-950 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]"
+                className="lg:hidden p-2.5 rounded-xl text-stone-300 hover:text-white hover:bg-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]"
                 aria-expanded={isMobileNavOpen}
                 aria-label="Open mobile navigation menu"
               >

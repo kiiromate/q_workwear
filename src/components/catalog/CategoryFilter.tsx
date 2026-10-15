@@ -20,7 +20,7 @@ export function CategoryFilter({
   return (
     <div
       className={cn(
-        'flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none',
+        'flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none',
         className
       )}
       role="tablist"
@@ -32,14 +32,14 @@ export function CategoryFilter({
         aria-selected={activeCategory === 'all'}
         onClick={() => onSelectCategory('all')}
         className={cn(
-          'flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]',
+          'flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]',
           activeCategory === 'all'
-            ? 'bg-[#E0483A] text-white shadow-sm'
-            : 'bg-stone-100 text-zinc-700 hover:bg-stone-200 border border-stone-200'
+            ? 'bg-[#E0483A] text-white shadow-md'
+            : 'bg-stone-900 text-stone-300 hover:bg-stone-800 hover:text-white border border-stone-800'
         )}
       >
         <Layers className="w-3.5 h-3.5" />
-        <span>All Workwear</span>
+        <span>All Workwear Range</span>
       </button>
 
       {categories.map((cat) => {
@@ -53,10 +53,10 @@ export function CategoryFilter({
             aria-selected={isActive}
             onClick={() => onSelectCategory(cat.id)}
             className={cn(
-              'px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]',
+              'px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E0483A]',
               isActive
-                ? 'bg-[#E0483A] text-white shadow-sm'
-                : 'bg-stone-100 text-zinc-700 hover:bg-stone-200 border border-stone-200'
+                ? 'bg-[#E0483A] text-white shadow-md'
+                : 'bg-stone-900 text-stone-300 hover:bg-stone-800 hover:text-white border border-stone-800'
             )}
           >
             {cat.name}

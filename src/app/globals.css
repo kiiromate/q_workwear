@@ -5,9 +5,11 @@
     --brand-primary: #e0483a;
     --brand-hover: #c5372b;
     --brand-light: #fdf2f0;
-    --surface-canvas: #ffffff;
-    --surface-subtle: #fbf9f8;
-    --surface-card: #f4efea;
+    --surface-canvas: #0c0b0a;
+    --surface-subtle: #141211;
+    --surface-card: #1c1a18;
+    --tailor-wood: #181513;
+    --tailor-tape: #f5c341;
   }
 
   html {
@@ -15,7 +17,7 @@
   }
 
   body {
-    background-color: var(--surface-canvas);
+    background-color: #ffffff;
     color: #18181b;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -23,10 +25,79 @@
   }
 }
 
+/* Tailor's Tape Measure Ruler Pattern */
+.tape-ruler-amber {
+  background-color: #f6c343;
+  background-image: 
+    linear-gradient(90deg, #18181b 1px, transparent 1px),
+    linear-gradient(90deg, #18181b 1px, transparent 1px),
+    linear-gradient(90deg, #18181b 2px, transparent 2px);
+  background-size: 8px 8px, 16px 14px, 48px 20px;
+  background-position: bottom left;
+  background-repeat: repeat-x;
+}
+
+.tape-ruler-dark {
+  background-color: #1a1816;
+  background-image: 
+    linear-gradient(90deg, rgba(224, 72, 58, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, #e0483a 2px, transparent 2px);
+  background-size: 8px 6px, 16px 10px, 48px 16px;
+  background-position: bottom left;
+  background-repeat: repeat-x;
+}
+
+/* Tailor's Cutting Table Grid */
+.cutting-table-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Basting / Running Stitch Line */
+.basting-stitch {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: rgba(224, 72, 58, 0.4);
+}
+
+.basting-stitch-white {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Woven Garment Spec Label Tag */
+.woven-spec-tag {
+  background-color: #fbf9f5;
+  border: 1px solid #e2ddd5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.woven-spec-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #e0483a;
+}
+
+/* Chalk Text Effect */
+.chalk-annotation {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.97);
   }
   to {
     opacity: 1;
