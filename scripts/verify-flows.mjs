@@ -7,6 +7,38 @@ const context = await browser.newContext({ viewport: { width: 1280, height: 900 
 const page = await context.newPage();
 const checks = [];
 try {
+  // 1. Header Collections disclosure dropdown
+  await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
+  const collectionsBtn = page.getByRole('button', { name: 'Collections', exact: false });
+  await collectionsBtn.click();
+  const dropdown = page.locator('#header-collections-dropdown');
+  assert.equal(await dropdown.isVisible(), true, 'collections dropdown opens on click');
+  assert.equal(await dropdown.getByRole('menuitem').count(), 5, '4 sector items + All collections link');
+  await dropdown.getByRole('menuitem', { name: 'Hospitality', exact: false }).click();
+  await page.waitForURL('**/products/?category=hospitality');
+  checks.push('header collections disclosure dropdown and sector routing');
+
+  // 2. Interactive SVG Garment Explorer on Homepage
+  await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
+  const garmentRail = page.getByRole('tablist', { name: 'Workwear category selector' });
+  assert.equal(await garmentRail.getByRole('tab').count(), 4, '4 SVG category tabs in rail');
+  
+  // Default is corporate
+  assert.equal(await page.locator('#garment-tab-corporate').getAttribute('aria-selected'), 'true');
+  assert.ok((await page.locator('.garment-spotlight-title').textContent()).includes('Corporate'));
+  
+  // Select Industrial tab
+  await page.locator('#garment-tab-industrial').click();
+  assert.equal(await page.locator('#garment-tab-industrial').getAttribute('aria-selected'), 'true');
+  assert.ok((await page.locator('.garment-spotlight-title').textContent()).includes('Industrial'));
+  assert.equal(await page.locator('.garment-svg-selected').count(), 1, 'active SVG garment highlighted');
+  
+  // Click explore collection in spotlight
+  await page.locator('.garment-spotlight-actions').getByRole('link', { name: 'Explore collection' }).click();
+  await page.waitForURL('**/products/?category=industrial');
+  checks.push('interactive SVG garment explorer selection, spotlight update and collection handoff');
+
+  // 3. Category filters and browser history
   await page.goto(`${origin}/products/?category=hospitality`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelectorAll('.collection-grid > section').length === 1);
   assert.equal(await page.getByRole('button', { name: 'Hospitality', exact: true }).getAttribute('aria-pressed'), 'true');
@@ -21,6 +53,7 @@ try {
   await page.waitForFunction(() => document.querySelector('button[aria-pressed="true"]')?.textContent === 'Industrial');
   checks.push('query filter, browser Back and Forward');
 
+  // 4. Product enquiry form and mailto draft
   await page.getByRole('link', { name: 'Enquire about Work overalls', exact: true }).click();
   await page.waitForURL('**/contact/?product=Work%20overalls');
   await page.waitForFunction(() => document.querySelector('#quote-garment')?.value === 'Work overalls');
@@ -33,7 +66,7 @@ try {
   await page.getByLabel('Quantity', { exact: false }).fill('24');
   await page.getByLabel('Tell us about your team', { exact: false }).fill('Navy & white. Logo placement: left chest.');
   assert.equal(await form.evaluate((element) => element.checkValidity()), true, 'valid enquiry accepted');
-  // Observe the prepared draft only. Do not send email or launch a mail client in this test.
+  
   await page.evaluate(() => addEventListener('click', (event) => {
     if (event.target.closest?.('a[href^="mailto:"]')) event.preventDefault();
   }, true));
@@ -45,9 +78,12 @@ try {
   assert.equal(draft.pathname, 'qworkwearsolution@gmail.com');
   assert.match(draft.searchParams.get('subject'), /Work overalls/);
   const body = draft.searchParams.get('body');
-  for (const expected of ['Test Buyer', 'buyer@example.com', 'Work overalls', '24', 'Navy & white. Logo placement: left chest.']) assert.ok(body.includes(expected));
+  for (const expected of ['Test Buyer', 'buyer@example.com', 'Work overalls', '24', 'Navy & white. Logo placement: left chest.']) {
+    assert.ok(body.includes(expected));
+  }
   checks.push('product context, native form validation and encoded email draft');
 
+  // 5. Message fallback, FAQ and hidden unconfirmed channels
   await page.goto(`${origin}/contact/?message=${encodeURIComponent('Aprons & chef jackets — sample enquiry')}`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelector('#quote-details')?.value.includes('Aprons & chef jackets'));
   await page.getByText('What should I include in my enquiry?', { exact: true }).click();
@@ -55,14 +91,17 @@ try {
   assert.equal(await page.locator('a[href^="tel:"], a[href*="wa.me"]').count(), 0, 'unconfirmed channels not published');
   checks.push('message fallback, FAQ and hidden unconfirmed channels');
 
+  // 6. Invalid category recovery
   await page.goto(`${origin}/products/?category=not-a-category`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelectorAll('.collection-grid > section').length === 4);
   assert.equal(await page.locator('.product-row').count(), 16);
   checks.push('invalid category recovers to all four collections');
 
+  // 7. Missing route 404
   const notFound = await page.goto(`${origin}/does-not-exist/`, { waitUntil: 'networkidle' });
   assert.equal(notFound.status(), 404);
   checks.push('missing route returns HTTP 404');
+
   console.log(JSON.stringify({ status: 'pass', checks }, null, 2));
 } finally {
   await browser.close();
