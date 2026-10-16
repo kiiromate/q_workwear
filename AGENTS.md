@@ -1,0 +1,43 @@
+# Q Workwear | IDE agent instructions
+
+You are implementing an **interactive, branded, low-maintenance quotation showroom** for Q Workwear, Kigali. Read this file **before changing code**.
+
+## Required reading, in order
+
+1. [Next-build handoff](docs/NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md): canonical client feedback, architecture, implementation phases and acceptance tests.
+2. [Branded-media / lookbook plan](docs/BRANDED_MEDIA_LOOKBOOK_2026-10-16.md): source hierarchy, original Q logo, photographic placeholders and presentation-deck reuse.
+3. [Interactive SVG spec](docs/INTERACTIVE_GARMENT_SVG_SPEC.md): custom React/SVG object interaction.
+4. [Earlier client feedback](docs/CLIENT_FEEDBACK_2026-10-15_INTERACTIVE_SHOWROOM.md): decisions and source notes, subordinate to the newer handoff.
+5. `PRODUCT.md`, `DESIGN.md`, `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/CONTENT_STATUS.md`, `docs/ASSET_PROVENANCE.md`, `IMAGE_GENERATION_PROMPTS.md`.
+
+**Precedence:** confirmed client direction in the 2026-10-16 handoff > older proposal documents. Do not treat earlier "no logos" image prompts as final: their *composition* is reusable; imagery now requires authentic Q Workwear brand treatment.
+
+## Client's non-negotiable direction
+
+- **Reference: https://afrikandaholdings.com/** (homepage), not just the Exotiká subpage. Aim for its simple, direct navigation and clear visual sections; produce Q Workwear's *own* interaction design, without copying code, media or brand.
+- First impression should be elegant, lively and obviously about Q Workwear uniforms. Add purposeful motion and interacting garment/article illustrations, **not** flashy animations in every section.
+- Branded placeholders: use the **actual Q Workwear logo assets from `public/images/logo/`** in natural placements on illustrative apparel, fabric tags, aprons, hats, packaging or props. Never let a generative model invent or distort the logo. Composite the original mark post-generation where needed.
+- Use the shared [Q Workwear Business Portfolio](https://docs.google.com/presentation/d/17BBLdYefkHXjSFnhQ_gHiz89_9gNVpeogLKa_iRkV_Y/edit) for accurate wording, sector/product coverage and *potential* lookbook images. Before exporting/reusing a photo, inspect the deck visually, track its slide/source and confirm permission.
+- No fake commissions, unapproved client logos, misleading PPE/certification claims, invented commercial terms, unidentified third-party images passed off as Q-made products, or claims that an enquiry has been submitted.
+- Preserve static export, minimal dependencies, quotation intent, deep links, mobile/keyboard access and low recurring cost.
+
+## Engineering workflow
+
+1. Audit code and project docs first. Record present state, duplicate instructions, unused assets and constraints. Do not blindly rewrite a functional page.
+2. Write a short implementation plan mapping **P0 through P5** in the handoff to files, risks and verification commands. Commit in small coherent slices. Prefer a feature branch and PR; avoid direct live deployment.
+3. Implement brand/media strategy, navigation/hero, SVG explorer, content/lookbook and polished enquiry flow in that order. An approved media replacement may remain pending while the UI works with placeholders.
+4. Run: `pnpm typecheck`, `pnpm build`, `pnpm test:ui` and `pnpm test:flows`. Existing UI scripts require a running local/static server; inspect their instructions before concluding a failure is an app bug.
+5. Verify mobile widths including 320, 375, 390, 768 and desktop 1440px; keyboard and screen reader semantics; focus return; reduced motion; click/tap behaviours; image crop, alt text, loading; original enquiry URL and mail draft behaviour.
+6. Report what changed, files/assets touched, before/after screenshots or preview, tests with actual results, unresolved permissions, and the next decision the owner must make.
+
+## Scope and safety
+
+- Current stack: Next.js App Router, React, TypeScript, Tailwind, local fonts, static export. Keep it unless actual requirements prove insufficient.
+- Keep `src/content/catalog.ts` and `src/content/site.ts` as the canonical business/content data sources; do not create a second manually maintained catalogue.
+- Keep routes `/`, `/products`, `/work`, `/about`, `/contact` and existing category/search query behaviour. Reshape nav visually if needed but preserve URLs.
+- Prefer SVG + CSS transforms / transitions and semantic React controls. No WebGL, large animation libraries, CMS, database, checkout, authentication or unnecessary subscription.
+- **Do not claim deployment or client approval without evidence**. Nothing in this planning document grants permission to display third-party portfolio assets as completed Q Workwear commissions.
+
+## Completion standard
+
+A buyer can understand the offer, browse or interact with real-looking branded uniform examples, select a category or garment, and launch an order-specific quote in ≤3 purposeful interactions from Home. The experience remains clear on mobile and works with animation disabled. Visual appeal matters, but no invented claims or persistent maintenance burden are accepted.
