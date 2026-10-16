@@ -2,6 +2,12 @@
 
 A photography-led workwear showcase for Quddus and Tinah in Kigali. Next.js App Router, React, TypeScript and Tailwind; static export for Vercel or Cloudflare Pages.
 
+## Next build: IDE-agent handoff (2026-10-16)
+
+**Agents: start with [AGENTS.md](AGENTS.md).** The current canonical implementation brief is [Next build agent handoff](docs/NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md), with [branded photo and PPT lookbook sourcing](docs/BRANDED_MEDIA_LOOKBOOK_2026-10-16.md) and [interactive SVG specification](docs/INTERACTIVE_GARMENT_SVG_SPEC.md).
+
+The clients prioritize simple, direct navigation inspired by the **main [Afrikanda Holdings site](https://afrikandaholdings.com/)**, distinctive but low-maintenance garment interactions, **authentic Q Workwear branded** illustrative photography, and considered reuse of the [Business Portfolio slide deck](https://docs.google.com/presentation/d/17BBLdYefkHXjSFnhQ_gHiz89_9gNVpeogLKa_iRkV_Y/edit) where publishing rights are confirmed. Current images are staging concepts, not documentary client work. These directives govern the **next build**, not the current live deployment.
+
 ## Develop
 
 ```sh
