@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
-import { siteConfig } from '@/content/site';
+import { categories } from '@/content/catalog';
 
 export function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -31,10 +31,41 @@ export function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         <Logo onClick={onClose} />
         <button type="button" className="menu-toggle" onClick={onClose} aria-label="Close navigation"><X aria-hidden="true" /></button>
       </div>
-      <nav className="container" aria-label="Mobile navigation">
-        {siteConfig.navigation.map((item) => <Link key={item.href} href={item.href} onClick={onClose} aria-current={pathname === item.href ? 'page' : undefined}>{item.label}</Link>)}
+      <nav className="container mobile-nav-body" aria-label="Mobile navigation">
+        <div className="mobile-nav-group">
+          <Link href="/products" onClick={onClose} className="mobile-nav-link-main" aria-current={pathname === '/products' ? 'page' : undefined}>
+            Collections
+          </Link>
+          <div className="mobile-subnav-grid">
+            {categories.map((cat) => (
+              <Link
+                key={cat.id}
+                href={`/products?category=${cat.id}`}
+                onClick={onClose}
+                className="mobile-sublink"
+              >
+                <span className="mobile-sublink-title">{cat.name}</span>
+                <span className="mobile-sublink-desc">{cat.tagline}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Link href="/work" onClick={onClose} className="mobile-nav-link-main" aria-current={pathname === '/work' ? 'page' : undefined}>
+          Lookbook
+        </Link>
+        <Link href="/about" onClick={onClose} className="mobile-nav-link-main" aria-current={pathname === '/about' ? 'page' : undefined}>
+          About
+        </Link>
+        <Link href="/contact" onClick={onClose} className="mobile-nav-link-main" aria-current={pathname === '/contact' ? 'page' : undefined}>
+          Contact
+        </Link>
       </nav>
-      <div className="container mobile-menu-bottom"><Link href="/contact" className="button button-primary" onClick={onClose}>Request a quote</Link></div>
+      <div className="container mobile-menu-bottom">
+        <Link href="/contact" className="button button-primary mobile-quote-btn" onClick={onClose}>
+          <span>Request a quote</span>
+          <ArrowRight aria-hidden="true" size={18} />
+        </Link>
+      </div>
     </dialog>
   );
 }
