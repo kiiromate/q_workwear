@@ -1,5 +1,7 @@
 # Q Workwear — five images
 
+> **2026-10-16 branding update:** This is a **legacy clean-image composition brief**, not the final delivery rule. It says "no logos" to avoid inaccurate AI-rendered text. The **new mandatory post-production step** is to apply an authentic Q Workwear mark/wordmark from `public/images/logo/` naturally to every generated placeholder/editorial image. See `docs/BRANDED_MEDIA_LOOKBOOK_2026-10-16.md` and `docs/NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md`. **Do not ask a model to hallucinate the brand logo.** Generated/illustrative imagery remains clearly distinct from actual completed commissions.
+
 Generate one opening image and four collections. Reuse these five throughout the website. The images describe garment styles; they are not documentary evidence of Q Workwear’s premises, people, customers or completed orders.
 
 ## Art direction — paste before every prompt
