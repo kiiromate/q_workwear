@@ -1,17 +1,30 @@
-# Website assets
+# Website assets and provenance record
 
-The current five showcase images are existing project illustrations, not photographs or proof of completed Q Workwear orders. They remain in place solely to preserve the image slots during development. Replace them using `IMAGE_GENERATION_PROMPTS.md`; the layout needs no additional imagery.
+**Last Updated:** 2026-10-16  
+**Status:** Branded illustrative placeholders actively composited with authentic Q Workwear logo assets.
 
-| Slot | Existing source | Replacement path |
-|---|---|---|
-| Opening image; reused for craft/about | `scripts/generate_atelier_visuals.py`, `create_hero_atelier` | `public/images/showcase/hero-atelier-table.webp` |
-| Corporate collection | Same script, `create_corporate_showcase` | `public/images/showcase/cat-corporate-suiting.webp` |
-| Hospitality collection | Same script, `create_hospitality_showcase` | `public/images/showcase/cat-hospitality-culinary.webp` |
-| Industrial collection | Same script, `create_industrial_showcase` | `public/images/showcase/cat-industrial-safety.webp` |
-| Branded collection | Same script, `create_branded_showcase` | `public/images/showcase/cat-branded-apparel.webp` |
+The five showcase images are bespoke illustrative studies designed to demonstrate garment styles and atelier craft. They incorporate the **authentic Q Workwear logo files from `public/images/logo/`** in natural positions (tailor specification cards, woven garment labels, chef crests, heavy industrial patches, and 3D puff embroidery). They illustrate capability and aesthetic direction; they are **not** documentary evidence of specific workshop premises, staff portraits, or completed client orders.
 
-The red and white transparent logos are pre-existing client-logo derivatives. The site uses emblem-only crops (`q-mark-red.png`, `q-mark-white.png`) to avoid unreadable miniature wordmarks. These are lossless crops of the original transparent assets, source rows 163–397, trimmed to the non-transparent bounding box; no geometry is redrawn. Source and transformation are embedded in each PNG’s metadata.
+## Showcase Assets & Compositing Register
 
-Barlow Regular, Medium and SemiBold are self-hosted from Google Fonts; the SIL Open Font License is included in `public/fonts/OFL.txt`. Source: `https://github.com/google/fonts/tree/main/ofl/barlow`.
+| Slot | Source Pipeline | Official Brand Mark Used | Placement & Technique | Production WebP Path |
+|---|---|---|---|---|
+| **Opening Hero** (Table) | `scripts/generate_atelier_visuals.py`, `create_hero_atelier` | `public/images/logo/q-mark-red.png` (80px height, Lanczos) | Centered tailor's specification card with topstitch border & brass pin | `public/images/showcase/hero-atelier-table.webp` (1920×1080) |
+| **Corporate Suiting** | Same script, `create_corporate_showcase` | `public/images/logo/q-mark-red.png` (72px height, Lanczos) | Woven brand label pinned on chest placket with red accent stripe | `public/images/showcase/cat-corporate-suiting.webp` (1200×900) |
+| **Hospitality & Culinary** | Same script, `create_hospitality_showcase` | `public/images/logo/q-mark-white.png` (64px height, Lanczos) | Chef jacket chest crest with red border topstitch | `public/images/showcase/cat-hospitality-culinary.webp` (1200×900) |
+| **Industrial & Safety** | Same script, `create_industrial_showcase` | `public/images/logo/q-mark-white.png` (70px height, Lanczos) | Heavy-duty Cordura patch on navy drill chest with safety-red border | `public/images/showcase/cat-industrial-safety.webp` (1200×900) |
+| **Branded Apparel** | Same script, `create_branded_showcase` | `public/images/logo/q-mark-white.png` (76px & 52px, Lanczos) | 3D puff embroidery badge on polo left chest and twill cap front panel | `public/images/showcase/cat-branded-apparel.webp` (1200×900) |
+| **Craftsmanship** (Archive) | Same script, `create_craftsmanship_showcase` | `public/images/logo/q-mark-red.png` (64px height, Lanczos) | Kraft paper pattern maker's stamp | `public/images/showcase/tailor-craftsmanship.webp` (1200×900) |
 
-For each replacement, retain the exact prompt, generation service and export filename in the project records. Use only imagery you are entitled to publish. Generated garment imagery is illustrative: it must not imply a certified safety rating, identify a fabricated founder, or stand in for a real client commission. Genuine portfolio photographs require the business’s and any identifiable subject’s permission.
+## Authentic Brand Identity Assets
+
+The red and white logos in `public/images/logo/` are authentic client-supplied assets:
+- `q-workwear-original.png`: Original client mark on red background (color and proportions reference).
+- `q-workwear-red-transparent.png` and `q-workwear-white-transparent.png`: Transparent full lockups (emblem + "Q WORKWEAR UNIFORMS & SAFETY").
+- `q-mark-red.png` and `q-mark-white.png`: Isolated tight-crop emblem marks (184×235) for crisp rendering on UI components, navigation, and garment compositing.
+
+Typography: Barlow Regular (400), Medium (500), and SemiBold (600) are self-hosted in `public/fonts/` under the SIL Open Font License (`public/fonts/OFL.txt`). Zero external font or tracking requests occur at runtime.
+
+## Presentation Deck & Lookbook Governance
+
+Images extracted from `docs/BUSINESS PORTFOLIO.pptx` are cataloged in `docs/LOOKBOOK_ASSET_MANIFEST.md`. All unpermissioned client logos (slide 40) are strictly withheld. Client-supplied photos of real commissions will be introduced under a distinctly labeled "Selected work" section once formal permission is documented. Illustrative concepts remain clearly tagged as inspirations.
