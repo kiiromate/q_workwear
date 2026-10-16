@@ -6,7 +6,7 @@ import AxeBuilder from '@axe-core/playwright';
 const origin = process.env.TEST_URL || 'http://localhost:3016';
 const evidence = process.env.TEST_OUTPUT || '.impeccable/review';
 const routes = ['/', '/products/', '/work/', '/about/', '/contact/'];
-const viewports = [360, 390, 768, 1024, 1440];
+const viewports = [320, 360, 375, 390, 768, 1024, 1050, 1440];
 const browser = await chromium.launch({ headless: true });
 const results = [];
 await mkdir(evidence, { recursive: true });

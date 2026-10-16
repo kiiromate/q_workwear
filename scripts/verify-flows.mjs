@@ -14,9 +14,15 @@ try {
   const dropdown = page.locator('#header-collections-dropdown');
   assert.equal(await dropdown.isVisible(), true, 'collections dropdown opens on click');
   assert.equal(await dropdown.getByRole('menuitem').count(), 5, '4 sector items + All collections link');
+  // Test Escape key closes dropdown
+  await page.keyboard.press('Escape');
+  assert.equal(await dropdown.isVisible(), false, 'Escape closes dropdown');
+  // Re-open and click sector
+  await collectionsBtn.click();
+  assert.equal(await dropdown.isVisible(), true, 'reopens on click');
   await dropdown.getByRole('menuitem', { name: 'Hospitality', exact: false }).click();
   await page.waitForURL('**/products/?category=hospitality');
-  checks.push('header collections disclosure dropdown and sector routing');
+  checks.push('header collections disclosure dropdown, Escape key, and sector routing');
 
   // 2. Interactive SVG Garment Explorer on Homepage
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
@@ -97,7 +103,17 @@ try {
   assert.equal(await page.locator('.product-row').count(), 16);
   checks.push('invalid category recovers to all four collections');
 
-  // 7. Missing route 404
+  // 7. Lookbook cards and enquiry handoff
+  await page.goto(`${origin}/work/`, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('.lookbook-card').count(), 6, '6 curated lookbook items render');
+  assert.equal(await page.locator('.lookbook-lane-badge').isVisible(), true, 'concept notice badge present');
+  await page.getByRole('link', { name: 'Enquire', exact: true }).first().click();
+  await page.waitForURL('**/contact/?product=**');
+  const prefilledProduct = await page.locator('#quote-garment').inputValue();
+  assert.ok(prefilledProduct.length > 0, 'product prefilled from lookbook enquire click');
+  checks.push('lookbook 6 curated cards, concept lane badge and enquiry handoff');
+
+  // 8. Missing route 404
   const notFound = await page.goto(`${origin}/does-not-exist/`, { waitUntil: 'networkidle' });
   assert.equal(notFound.status(), 404);
   checks.push('missing route returns HTTP 404');
