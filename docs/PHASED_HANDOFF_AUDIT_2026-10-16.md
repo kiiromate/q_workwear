@@ -177,9 +177,51 @@ Inspection of `https://afrikandaholdings.com/`:
 ### Phase P5: End-to-End Verification & Review Package
 - **Files:** `scripts/verify-ui.mjs`, `scripts/verify-flows.mjs`.
 - **Deliverables:**
-  - Run full test suite across 320, 360, 390, 768, 1024, 1440px viewports.
+  - Run full test suite across 320, 360, 390, 768, 1024, 1050, 1440px viewports.
   - Verify WCAG 2.1 AA accessibility (axe-core), screen reader labels, keyboard tab loops.
   - Verify form validation and `mailto:` prefill encoding.
   - Generate visual review screenshots and client summary report.
 - **Verification:** `pnpm typecheck && pnpm build && pnpm test:ui && pnpm test:flows`.
 - **Gate:** 100% test pass rate, clean static build, no console errors or broken links.
+
+---
+
+## 4. Phase Execution & Verification Evidence
+
+All six phases (P0 through P5) have been systematically executed and verified against the canonical Next-Build Handoff specifications.
+
+### Summary of Completed Commits (Branch `feat/interactive-showroom-p0-audit`)
+
+1. **Phase P0 (`f17a28d`):** `docs(audit): complete repository, asset, deck, and reference audit (P0)`
+   - Full audit of 10 logo assets in `public/images/logo/`, cataloging resolutions, channels, and alpha tight bounds.
+   - Live DOM scraping and analysis of navigation architecture from `https://afrikandaholdings.com/`.
+   - Inspection of `docs/BUSINESS PORTFOLIO.pptx` (42 slides, 45 images), blocking unverified client marks (Slide 40) in `docs/LOOKBOOK_ASSET_MANIFEST.md`.
+2. **Phase P1 (`33ed64c`):** `feat(media): composite authentic Q logos and update asset provenance (P1)`
+   - Updated `scripts/generate_atelier_visuals.py` compositing locked `q-mark-red.png` and `q-mark-white.png` onto all 5 showcase images plus `tailor-craftsmanship.webp`.
+   - Updated `docs/ASSET_PROVENANCE.md` with exact stitch boundaries, typography (Barlow), and generation hashes.
+3. **Phase P2 (`3da6a35`):** `feat(nav): implement collections dropdown, mobile sector drawer, and refined hero (P2)`
+   - Header Collections disclosure menu with `aria-expanded`, keyboard Escape, click-outside dismissal, and direct sector routing.
+   - Refactored `MobileNav.tsx` with structured Collections group.
+   - Refined `Hero.tsx` with dual CTA hierarchy ("Explore collections" & "Request a quote") and smooth `.hero-reveal` entrance.
+4. **Phase P3 (`8b84971`):** `feat(garments): implement interactive SVG garment explorer with spotlight handoff (P3)`
+   - Created `src/components/garments/garments.ts`, `GarmentArtwork.tsx`, `GarmentExplorer.tsx`.
+   - 4 bespoke SVG garment vector models (Corporate, Hospitality, Industrial, Branded Apparel) with brand-red accents and uniform 320x400 viewBoxes.
+   - Interactive tablist with live spotlight updates, keyboard tab support, and direct quotation / catalog deep links.
+5. **Phase P4 (`63d55dd`):** `feat(content): curate lookbook, expand about narrative and values (P4)`
+   - Curated 6-item lookbook in `src/app/work/page.tsx` with concept lane badge, provenance tags, and custom commission callout.
+   - Reclaimed orphan asset `tailor-craftsmanship.webp` as Atelier Prototyping study.
+   - Expanded About page with Rwandan manufacturing narrative, founders section, and core values (Integrity, Realistic execution, Efficient responsibility).
+   - Enriched FAQ with custom uniform consultations, fitting samples, and bespoke sectors.
+6. **Phase P5 (`9d79a8b`):** `test: expand e2e UI viewports and verify lookbook enquiry flow (P5)`
+   - Expanded `scripts/verify-ui.mjs` across 8 viewports (320, 360, 375, 390, 768, 1024, 1050, 1440px): 40 layout checks passed, 0 axe accessibility violations, 0 overflow, 0 broken images.
+   - Expanded `scripts/verify-flows.mjs` verifying Collections dropdown, Escape dismissal, SVG Garment Explorer spotlight, category filters, quote form prefill, `mailto:` draft encoding, Lookbook cards, and 404 recovery.
+
+### Test Verification Matrix
+
+| Test Suite | Scope | Result | Status |
+| :--- | :--- | :--- | :--- |
+| `pnpm typecheck` | TypeScript compilation (`tsc --noEmit`) | 0 errors | **PASS** |
+| `pnpm build` | Static export (`next build`, 10 static routes) | 10 static pages exported | **PASS** |
+| `verify-ui.mjs` | 8 viewports (320px–1440px), axe WCAG 2.1 AA, layout checks | 40/40 checks passed | **PASS** |
+| `verify-flows.mjs` | 8 interactive user flows (dropdown, explorer, enquiry, lookbook) | 8/8 checks passed | **PASS** |
+
