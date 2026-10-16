@@ -196,6 +196,39 @@
 .garment-photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(20, 22, 20, 0.7)); color: #ffffff; }
 .photo-label { font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
 
+/* About values section */
+.about-values-section { margin-top: clamp(48px, 6vw, 80px); }
+.section-lead-compact { max-width: 54ch; }
+.about-values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 36px; }
+.value-card { background: #ffffff; border: 1px solid var(--line); padding: 32px 24px; display: flex; flex-direction: column; }
+.value-number { font-family: var(--font-barlow-condensed, inherit); font-size: 28px; font-weight: 700; color: var(--brand); margin-bottom: 16px; letter-spacing: 0.04em; }
+.value-card-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--ink); letter-spacing: -0.01em; }
+.value-card-desc { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
+
+/* Lookbook & inspiration */
+.lookbook-body { margin-top: clamp(32px, 4vw, 48px); margin-bottom: clamp(64px, 8vw, 112px); }
+.lookbook-lane-badge { display: inline-flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid var(--line); padding: 10px 18px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand); margin-bottom: 36px; }
+.lane-badge-icon { color: var(--brand); flex-shrink: 0; }
+.lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.lookbook-card { background: #ffffff; border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.lookbook-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05); }
+.lookbook-card-image-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #deded7; overflow: hidden; }
+.lookbook-card-img { object-fit: cover; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+.lookbook-card:hover .lookbook-card-img { transform: scale(1.035); }
+.lookbook-card-overlay { position: absolute; top: 12px; left: 12px; }
+.card-concept-pill { display: inline-block; background: rgba(20, 22, 20, 0.85); color: #ffffff; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 10px; backdrop-filter: blur(4px); }
+.lookbook-card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.card-provenance-tag { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 8px; }
+.lookbook-card-title { font-size: 21px; font-weight: 500; line-height: 1.25; margin-bottom: 12px; color: var(--ink); }
+.lookbook-card-desc { font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 24px; flex-grow: 1; }
+.lookbook-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.button-small { min-height: 38px; padding: 8px 16px; font-size: 14px; gap: 8px; }
+
+/* Custom Order Callout */
+.lookbook-custom-callout { margin-top: 56px; background: #ffffff; border: 1px solid var(--line); border-left: 4px solid var(--brand); padding: clamp(28px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.custom-callout-text h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 500; margin-bottom: 8px; color: var(--ink); }
+.custom-callout-text p { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 65ch; margin: 0; }
+
 @media (min-width: 1600px) { .hero-frame { aspect-ratio: 2.8; } }
 @media (max-width: 1050px) {
   .header-nav { display: none; }
@@ -205,6 +238,9 @@
   .garment-spotlight { grid-template-columns: 1fr; gap: 32px; }
   .home-collections { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
   .process { grid-template-columns: 1fr; gap: 40px; }
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .lookbook-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .lookbook-custom-callout { flex-direction: column; align-items: start; gap: 24px; }
 }
 @media (max-width: 640px) {
   .header-inner, .mobile-menu-top { height: 76px; min-height: 76px; }
@@ -246,6 +282,11 @@
   .collection-grid { gap: 48px; }
   .contact-grid, .story-grid { gap: 40px; }
   .filter-bar { gap: 4px 20px; }
+  .about-values-grid { grid-template-columns: 1fr; gap: 16px; }
+  .lookbook-grid { grid-template-columns: 1fr; gap: 20px; }
+  .lookbook-card-content { padding: 20px 16px; }
+  .lookbook-custom-callout { padding: 24px 16px; }
+  .lookbook-custom-callout .button { width: 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
