@@ -1,4 +1,6 @@
 # Q Workwear | Interactive showroom revision brief
+
+> **Updated 2026-10-16:** Treat this as source context. The current implementation authority is [Next build agent handoff](NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md) and [Branded imagery/PPT lookbook plan](BRANDED_MEDIA_LOOKBOOK_2026-10-16.md). The client's preferred reference is the **main Afrikanda Holdings homepage**, https://afrikandaholdings.com/, not merely Exotiká. All new illustrative/placeholding photographs must be naturally **Q Workwear-branded using the authentic supplied logo artwork**. The earlier "five unbranded images" limitation does not preclude authorized PPT lookbook imagery.
 Status: proposed for client review, not an approved design or deployed site.
 Date: 2026-10-15
 Reference: https://afrikandaholdings.com/exotika/
