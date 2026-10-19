@@ -1,3 +1,14 @@
+"""
+ARCHIVED / RETIRED (2026-10-19 — Issue #3 Corrective Build):
+This procedural Pillow geometric art generator was retired after client visual review
+rejected 2D polygon garment illustrations and floating brand cards.
+Production assets in `public/images/showcase/` and `public/images/editorial/` are now
+photorealistic photographs processed by `scripts/composite_photoreal_assets.py`.
+Do NOT run this script against `public/images/`.
+"""
+import sys
+sys.exit("ARCHIVED: Use scripts/composite_photoreal_assets.py for photorealistic assets.")
+
 import os
 import math
 import random
