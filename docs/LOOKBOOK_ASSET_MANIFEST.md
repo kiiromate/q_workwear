@@ -1,5 +1,7 @@
 # Q Workwear | PPT lookbook asset manifest
 
+> **2026-10-19 correction:** This is the existing **PPT source / rights** register, NOT a record of newly generated photographic lookbook images. It preserves the deck's source/permission gates. See [new photoreal shot list](PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md), [production visual asset registry](VISUAL_ASSET_REGISTRY.md), and [client preview gate](CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md). Do not re-label any PENDING_PERMISSION slides as public work without client/rightsholder authorization.
+
 **Status:** authoritative asset registry & intake tracking ledger.  
 **Last Audit Date:** 2026-10-16  
 **Source Presentation:** Local master at `docs/BUSINESS PORTFOLIO.pptx` (42 slides, 45 embedded media files).  
