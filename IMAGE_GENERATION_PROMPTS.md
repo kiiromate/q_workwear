@@ -1,4 +1,6 @@
-# Q Workwear — five images
+# Q Workwear — five images (LEGACY CLEAN-BASE COMPOSITIONS)
+
+> **DO NOT USE AS FINAL VISUAL PRODUCTION PROMPTS. 2026-10-19 OWNER REVIEW OVERRIDE:** The existing code produced abstract geometric PIL images which were rejected as commercially weak, regardless of brand-logo overlays. The **current, authoritative prompt set** is [Photoreal Q Workwear image production](docs/PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md) with **29 shot-specific concepts** and room for more where needed. Combine a real photo generator/source with exact post-composited Q marks; do not fall back to "pretty" geometry. See [client reference acceptance contract](docs/CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md). Old five-file paths may be preserved as asset locations, not image-count limits.
 
 > **2026-10-16 branding update:** This is a **legacy clean-image composition brief**, not the final delivery rule. It says "no logos" to avoid inaccurate AI-rendered text. The **new mandatory post-production step** is to apply an authentic Q Workwear mark/wordmark from `public/images/logo/` naturally to every generated placeholder/editorial image. See `docs/BRANDED_MEDIA_LOOKBOOK_2026-10-16.md` and `docs/NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md`. **Do not ask a model to hallucinate the brand logo.** Generated/illustrative imagery remains clearly distinct from actual completed commissions.
 
