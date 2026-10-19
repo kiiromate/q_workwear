@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="480" viewBox="0 0 1160 480" role="img" aria-labelledby="title desc">
+<title id="title">Proposed Q Workwear garment silhouettes</title>
+<desc id="desc">Four technical flat illustration studies with consistent linework: business blazer and shirt, chef jacket and apron, industrial coverall, polo and cap. These are design studies, not product patterns or approved garment specifications.</desc>
+<defs>
+<style>
+.panel{fill:#fbfaf8;stroke:#d8d8d4;stroke-width:1.3}
+.out{fill:#f2f1ed;stroke:#29333a;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.inner{fill:#fff;stroke:#29333a;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.line{fill:none;stroke:#42515b;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.stitch{fill:none;stroke:#88929a;stroke-width:1.1;stroke-dasharray:3 4}
+.red{fill:#b73329;stroke:#b73329;stroke-width:2}
+.cap{fill:#f4e8d9;stroke:#29333a;stroke-width:2.4;stroke-linejoin:round}
+.label{font:600 18px system-ui,sans-serif;fill:#222c31}
+.sub{font:13px system-ui,sans-serif;fill:#656966}
+</style>
+</defs>
+<!-- Panel 1: corporate blazer, realistic conventional garment anatomy -->
+<g transform="translate(0 0)">
+<rect class="panel" x="8" y="8" width="272" height="462" rx="4"/>
+<!-- Shirt under blazer -->
+<path class="inner" d="M111 73 L140 92 L169 73 L170 298 L110 298 Z"/>
+<path class="inner" d="M111 73 L124 64 L140 83 L122 111 Z M169 73 L156 64 L140 83 L158 111 Z"/>
+<path class="line" d="M140 85 V299"/><circle cx="140" cy="130" r="2" fill="#485461"/><circle cx="140" cy="173" r="2" fill="#485461"/><circle cx="140" cy="217" r="2" fill="#485461"/>
+<!-- Shoulder sloping into sleeves; hem natural -->
+<path class="out" d="M107 75 C98 78 76 84 65 99 L47 145 L34 252 L60 261 L88 156 L86 311 Q140 322 194 311 L192 156 L220 261 L246 252 L233 145 L215 99 Q206 84 173 75 L155 90 L140 105 L125 90 Z"/>
+<path class="line" d="M88 156 L65 99 M192 156 L215 99"/>
+<path class="inner" d="M107 75 L89 115 L109 134 L96 153 L139 223 L140 233 L114 133 Z M173 75 L191 115 L171 134 L184 153 L141 223 L140 233 L166 133 Z"/>
+<path class="line" d="M140 233 L139 310 M121 240 L105 299 M159 240 L175 299"/>
+<circle cx="141" cy="248" r="3" fill="#485461"/><circle cx="141" cy="282" r="3" fill="#485461"/>
+<path class="line" d="M76 247 L100 247 L100 260 L76 260 M180 247 L204 247 L204 260 L180 260 M82 186 H101"/>
+<path class="stitch" d="M85 304 Q140 313 195 304"/>
+<line class="red" x1="104" y1="123" x2="113" y2="125"/>
+<text class="label" x="25" y="392">Corporate</text><text class="sub" x="25" y="415">Blazer + shirt</text>
+</g>
+<!-- Panel 2: jacket and separate apron, correctly separated garment objects -->
+<g transform="translate(290 0)">
+<rect class="panel" x="8" y="8" width="272" height="462" rx="4"/>
+<!-- Chef jacket -->
+<path class="out" d="M77 78 L95 70 Q114 75 133 78 Q150 75 164 70 L188 83 L200 147 L187 156 L181 133 L179 288 Q131 299 81 288 L79 133 L73 156 L57 147 L65 84 Z"/>
+<path class="inner" d="M96 67 L132 67 L133 86 L94 86 Z"/>
+<path class="line" d="M81 133 L65 84 M181 133 L188 84"/>
+<path class="line" d="M130 85 L122 286 M146 85 L154 286"/>
+<g fill="#40494c"><circle cx="123" cy="112" r="3"/><circle cx="153" cy="112" r="3"/><circle cx="121" cy="146" r="3"/><circle cx="155" cy="146" r="3"/><circle cx="120" cy="180" r="3"/><circle cx="157" cy="180" r="3"/></g>
+<path class="stitch" d="M81 279 Q130 290 179 279"/>
+<!-- Apron hanging separately, not pasted over chef jacket -->
+<g transform="translate(134 155) rotate(7)">
+<path class="line" d="M48 12 Q70 -14 92 12"/><path class="cap" d="M42 12 L98 12 L115 161 L24 161 Z"/>
+<path class="line" d="M28 76 L-7 83 M109 76 L138 84"/>
+<path class="line" d="M46 109 H94 V141 H46 Z M70 109 V141"/>
+<path class="stitch" d="M32 154 H107"/>
+<path class="red" d="M46 22 H59" stroke-width="1.5"/>
+</g>
+<text class="label" x="25" y="392">Hospitality</text><text class="sub" x="25" y="415">Chef jacket + bib apron</text>
+</g>
+<!-- Panel 3: industrial coverall with integrated sleeves and two separate leg openings -->
+<g transform="translate(580 0)">
+<rect class="panel" x="8" y="8" width="272" height="462" rx="4"/>
+<path class="inner" d="M118 67 Q140 73 162 67 L175 82 L160 103 L140 88 L120 103 L105 82 Z"/>
+<path class="out" d="M106 80 L67 102 L48 206 L67 216 L90 138 L90 286 L96 350 L133 350 L139 260 L147 260 L153 350 L188 350 L194 284 L194 138 L217 216 L236 206 L217 102 L174 80 L156 101 L140 112 L123 101 Z"/>
+<path class="line" d="M90 138 L67 102 M194 138 L217 102 M140 112 L140 278 M93 254 H190"/>
+<path class="line" d="M98 177 H133 V212 H98 Z M150 177 H185 V212 H150 Z"/>
+<path class="line" d="M106 178 L116 186 L128 178 M156 178 L166 186 L179 178"/>
+<path class="line" d="M99 304 L132 304 M153 304 H184"/>
+<path class="stitch" d="M98 345 H134 M152 345 H188 M91 286 L135 286 M145 286 H192"/>
+<!-- hi-vis strips across garment, not generic badges -->
+<path d="M69 128 L90 133 L87 150 L66 145 Z M194 133 L216 128 L220 145 L198 150 Z M91 233 H191 V243 H91 Z" fill="#ece77d" stroke="#b7b36c" stroke-width="1"/>
+<path class="line" d="M104 234 H180"/>
+<text class="label" x="25" y="392">Industrial</text><text class="sub" x="25" y="415">Coverall + utility details</text>
+</g>
+<!-- Panel 4: realistic polo, separate six-panel cap -->
+<g transform="translate(870 0)">
+<rect class="panel" x="8" y="8" width="272" height="462" rx="4"/>
+<!-- Shirt body -->
+<path class="out" d="M102 87 Q112 83 123 81 L140 93 L157 81 Q166 83 178 87 L220 114 L236 167 L206 179 L184 137 L185 310 Q140 320 95 310 L96 137 L74 179 L44 167 L60 114 Z"/>
+<path class="line" d="M96 137 L60 114 M184 137 L220 114"/>
+<path class="inner" d="M123 81 L140 101 L125 124 L111 99 Z M157 81 L140 101 L155 124 L169 99 Z"/>
+<path class="line" d="M140 102 V160"/><circle cx="140" cy="119" r="2.2" fill="#36424c"/><circle cx="140" cy="139" r="2.2" fill="#36424c"/>
+<path class="stitch" d="M97 303 Q140 312 184 303 M51 166 L70 176 M209 176 L232 166"/>
+<!-- Plain sample badge, not counterfeit Q symbol -->
+<rect x="103" y="149" width="20" height="13" rx="1" fill="#b73329" opacity=".7"/>
+<!-- Separate cap -->
+<g transform="translate(175 234) scale(.64)">
+<path class="cap" d="M10 67 Q20 15 75 13 Q128 18 137 67 Z"/>
+<path class="line" d="M75 13 V67 M75 13 Q37 29 25 67 M75 13 Q112 31 122 67"/>
+<path class="cap" d="M10 67 Q77 93 149 66 Q140 90 97 101 Q38 106 10 67 Z"/>
+<path class="stitch" d="M21 75 Q73 96 133 77"/>
+</g>
+<text class="label" x="25" y="392">Branded apparel</text><text class="sub" x="25" y="415">Polo + cap</text>
+</g>
+</svg>
