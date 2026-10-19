@@ -124,6 +124,8 @@ No visible printed-looking mark on the formal blazer lapel/chest in the approved
 
 ## 5. Image quality needs an editorial standard, not blanket logo compositing
 
+**Owner follow-up: branding realism is reopened across all active images.** Read the mandatory [branding method and scale correction](BRANDING_METHOD_AND_SCALE_CORRECTION_2026-10-19.md). It adds a method-by-garment matrix, explicit rejection of IND03's miniature Q overlay, scale/detail checks and a small-batch review workflow. Embroidery, print, labels and patches must not receive an identical generic treatment; no logo is preferable where appropriate. The scenes may remain useful while their branding is rejected.
+
 **Priority P0 for defective primary imagery; P1 for wider refinements. Confidence: High on pipeline limitations; Medium on art direction.**
 
 The change from polygon posters to photographic concepts is useful. It does not establish that every image is convincing, suitable or client-approved.

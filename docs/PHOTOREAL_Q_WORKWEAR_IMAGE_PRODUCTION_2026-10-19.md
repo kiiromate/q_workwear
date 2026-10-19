@@ -1,6 +1,8 @@
 # Q Workwear | Photorealistic visual identity, image-production brief and asset coverage
 Date: 2026-10-19 | Priority: P0/P1 | **Supersedes PIL geometric-image direction**
 
+> **OWNER CORRECTION — application method and scale:** [Branding method and scale correction](BRANDING_METHOD_AND_SCALE_CORRECTION_2026-10-19.md) overrides mandatory/tiny-logo placements in the prompts below, especially IND03's pocket-edge embroidery and H02's mark-per-garment instruction. Decide whether branding belongs in the shot, then choose embroidery, print, label, patch or no mark appropriately. The shared generic embroidery compositor and fixed pixel size are not proof of realistic fabrication. Reassess all active image branding; retain clean unbranded details where stronger. No new production capabilities are implied by a proposed visual treatment.
+
 ## 1. The non-negotiable goal
 
 From the buyer's first glance, this must look like **a credible bespoke uniform and workwear maker**, not an abstract graphic studio or a portfolio of invented completed projects. The reviewed screenshots of the feature branch showed triangle/ruler compositions, pseudo garment outlines, logos pasted on graphic tags and small low-credibility textures. Stop treating the old geometric generator as a production source.
