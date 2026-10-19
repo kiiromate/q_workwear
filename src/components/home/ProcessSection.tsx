@@ -1,13 +1,27 @@
-export function ProcessSection() {
-  const steps = [
-    { title: 'Tell us what you need', copy: 'Share your garment ideas, team size and preferred delivery date.' },
-    { title: 'Work through the details', copy: 'Discuss colours, fabric, fit and branding for your order.' },
-    { title: 'Agree your order', copy: 'Confirm the specification, quotation and schedule before production.' },
-  ];
+import { getSiteCopy, Locale } from '@/content/i18n';
+
+interface ProcessSectionProps {
+  locale?: Locale;
+}
+
+export function ProcessSection({ locale = 'en' }: ProcessSectionProps) {
+  const copy = getSiteCopy(locale).process;
   return (
     <section className="container section process" aria-labelledby="process-title">
-      <h2 id="process-title" className="section-title">From first idea<br />to team uniform.</h2>
-      <ol className="process-list">{steps.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.copy}</p></li>)}</ol>
+      <h2 id="process-title" className="section-title">
+        {copy.titleLine1}
+        <br />
+        {copy.titleLine2}
+      </h2>
+      <ol className="process-list">
+        {copy.steps.map((step) => (
+          <li key={step.title}>
+            <h3>{step.title}</h3>
+            <p>{step.copy}</p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
+
