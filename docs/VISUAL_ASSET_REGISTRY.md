@@ -41,6 +41,7 @@ This register MUST be filled as each new source/photographic image is produced o
 | CR03 | Embroidery technique | Not yet verified | Unknown | Threaded Q | IDEA | TBD | TBD |
 | CR04 | Fabric swatches | Not yet verified | Unknown | Sample tag | IDEA | TBD | TBD |
 | HC01 | Scrubs concept | Not yet verified | Unknown | Manufacturer label | IDEA | TBD | TBD |
+| HC03 | Healthcare tunic finishing detail | Not yet verified | Unknown | Manufacturer label | IDEA | TBD | TBD |
 | HC02 | Medical/dust coat | Not yet verified | Unknown | Chest Q | IDEA | TBD | TBD |
 | SEC01 | Security servicewear | Not yet verified | Unknown | Sleeve Q | IDEA | TBD | TBD |
 | SCH01 | School set | Not yet verified | Unknown | Neck label | IDEA | TBD | TBD |
