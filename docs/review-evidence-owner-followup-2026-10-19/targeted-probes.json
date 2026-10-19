@@ -1,0 +1,22 @@
+{
+  "reviewed_commit": "f3afbf6",
+  "surface": "existing out/ export at http://127.0.0.1:3027",
+  "sent_email": false,
+  "tab_panel_targets_at_initial_corporate_selection": [
+    {"tab": "garment-tab-corporate", "target": "garment-panel-corporate", "exists": true},
+    {"tab": "garment-tab-hospitality", "target": "garment-panel-hospitality", "exists": false},
+    {"tab": "garment-tab-industrial", "target": "garment-panel-industrial", "exists": false},
+    {"tab": "garment-tab-branded", "target": "garment-panel-branded", "exists": false}
+  ],
+  "desktop_disclosure_focus_exit": {
+    "steps": "Open Collections, Tab through its links until focus is on About",
+    "focused_destination": "/about/",
+    "dropdown_still_visible": true
+  },
+  "stale_prepared_email": {
+    "steps": "Open contact with product Blazers; enter Review Buyer and review@example.invalid; prepare draft; change Your name to Changed Name; inspect Open draft again URL",
+    "current_name": "Changed Name",
+    "name_in_reopened_draft": "Review Buyer",
+    "recipient": "qworkwearsolution@gmail.com"
+  }
+}

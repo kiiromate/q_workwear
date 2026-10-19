@@ -1,0 +1,43 @@
+[
+  {
+    "name": "home",
+    "status": 200,
+    "title": "Q Workwear | Custom Workwear & Uniform Tailoring in Kigali"
+  },
+  {
+    "name": "about",
+    "status": 200,
+    "title": "About | Q Workwear Kigali"
+  },
+  {
+    "name": "products",
+    "status": 200,
+    "title": "Collections | Q Workwear Kigali"
+  },
+  {
+    "name": "work",
+    "status": 200,
+    "title": "Lookbook | Q Workwear Kigali"
+  },
+  {
+    "referenceAt1s": [
+      {
+        "tag": "DIV",
+        "text": "HOSPITALITY & HOME COLLECTION\nComprehensive product range efficient & high-quality products\nLEARN MORE",
+        "cls": "banner has-hover is-full-height is-selected"
+      }
+    ]
+  },
+  {
+    "referenceAt8s": [
+      {
+        "tag": "DIV",
+        "text": "CONSULTANCY\nDynamic consultancy services fostering global collaborations\nLEARN MORE",
+        "cls": "banner has-hover is-full-height is-selected"
+      }
+    ]
+  },
+  {
+    "referenceVisibleHeader": "Home\nHospitality & Home Collection\nHospitality Collection\nHome Collection\nInterior Design\nConsultancy\nExotiká\nContact Us\nNewsletter"
+  }
+]

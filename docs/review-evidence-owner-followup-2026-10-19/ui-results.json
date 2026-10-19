@@ -1,0 +1,231 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 320,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 320,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 320,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 320,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 360,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 360,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 360,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 360,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 360,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 375,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 375,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 375,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 375,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 375,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 390,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 390,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 390,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 390,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 768,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 768,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 768,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 768,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 1024,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 1024,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 1024,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 1024,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 1050,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 1050,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 1050,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 1050,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 1050,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 1051,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 1051,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 1051,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 1051,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 1051,
+    "status": "pass"
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "status": "pass"
+  },
+  {
+    "route": "/products/",
+    "width": 1440,
+    "status": "pass"
+  },
+  {
+    "route": "/work/",
+    "width": 1440,
+    "status": "pass"
+  },
+  {
+    "route": "/about/",
+    "width": 1440,
+    "status": "pass"
+  },
+  {
+    "route": "/contact/",
+    "width": 1440,
+    "status": "pass"
+  },
+  {
+    "interaction": "mobile navigation, focus containment, Escape and route change",
+    "status": "pass"
+  }
+]
