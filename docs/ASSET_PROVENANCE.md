@@ -1,5 +1,7 @@
 # Website assets and provenance record
 
+> **VISUAL QA STATUS UPDATED 2026-10-19:** This document describes the **current geometric / illustrative assets** from the existing agent implementation. Despite having authentic Q logos composited, these **FAILED owner visual review** because the garments are not realistic photographs. They are NOT final approved assets for the proposed client preview. For corrective direction see [Photoreal image production](PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md) and [Visual asset registry](VISUAL_ASSET_REGISTRY.md). Keep this as historical provenance and replace the public asset registration only when new photographs have actually been produced, reviewed and integrated.
+
 **Last Updated:** 2026-10-16  
 **Status:** Branded illustrative placeholders actively composited with authentic Q Workwear logo assets.
 
