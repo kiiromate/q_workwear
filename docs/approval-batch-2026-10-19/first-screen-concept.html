@@ -18,21 +18,21 @@ header .menu-toggle{display:none;border:1px solid var(--ink);padding:.55rem;back
 </head>
 <body>
 <header>
-  <a class="identity" href="#" aria-label="Q Workwear home"><img src="../../public/images/logo/q-mark-red.png" alt=""><span>Q Workwear</span></a>
+  <a class="identity" href="/" aria-label="Q Workwear home"><img src="../../public/images/logo/q-mark-red.png" alt=""><span>Q Workwear</span></a>
   <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-  <nav id="main-nav" aria-label="Main navigation"><a href="#categories">Collections</a><a href="#lookbook">Lookbook</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#contact" class="quote">Request a quote</a></nav>
+  <nav id="main-nav" aria-label="Main navigation"><a href="/products">Collections</a><a href="/work">Lookbook</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/contact" class="quote">Request a quote</a></nav>
 </header>
 <main class="wrap">
  <div class="intro"><h1>Workwear, made<br>for your team.</h1><p>Uniforms designed around your team, your work and your identity. Made to order in Kigali.</p></div>
  <section class="hero" aria-roledescription="slideshow" aria-label="Uniform collections">
   <div class="photo" id="hero-photo" aria-hidden="true"></div><div class="overlay" aria-hidden="true"></div>
-  <div class="hero-content"><span class="eyebrow" id="slide-count">01 / 04</span><h2 id="hero-title">Corporate uniforms</h2><p id="hero-desc">Tailored officewear, shirts and front-of-house uniforms.</p><div class="actions"><a class="button" id="hero-link" href="#corporate">Explore corporate</a><a class="button outline" href="#contact">Discuss an order</a></div></div>
+  <div class="hero-content"><span class="eyebrow" id="slide-count">01 / 04</span><h2 id="hero-title">Corporate uniforms</h2><p id="hero-desc">Tailored officewear, shirts and front-of-house uniforms.</p><div class="actions"><a class="button" id="hero-link" href="/products?category=corporate">Explore corporate</a><a class="button outline" href="/contact">Discuss an order</a></div></div>
  </section>
  <div class="controlbar">
   <div class="slide-nav" aria-label="Choose a visual"><button id="prev" aria-label="Previous collection">←</button><button data-slide="0" aria-current="true">01</button><button data-slide="1" aria-current="false">02</button><button data-slide="2" aria-current="false">03</button><button data-slide="3" aria-current="false">04</button><button id="next" aria-label="Next collection">→</button><button class="play" id="pause" aria-pressed="false">Pause</button></div>
-  <div class="jump" id="categories" aria-label="Direct collection links"><a href="#corporate">Corporate</a><a href="#hospitality">Hospitality</a><a href="#industrial">Industrial</a><a href="#branded">Branded apparel</a></div>
+  <div class="jump" id="categories" aria-label="Direct collection links"><a href="/products?category=corporate">Corporate</a><a href="/products?category=hospitality">Hospitality</a><a href="/products?category=industrial">Industrial</a><a href="/products?category=branded">Branded apparel</a></div>
  </div>
- <p class="note">Approval prototype, not the public website. Visuals are illustrative concepts; the logo application and final product availability require confirmation. The direct collection links above work without waiting for a slide.</p>
+ <p class="note">Approval prototype, not the public website. Visuals are illustrative concepts; the logo application and final product availability require confirmation. Direct category routes are always available, independently of the slideshow. Run inside the actual site server to test navigation.</p>
 </main>
 <script>
 const dir="../review-evidence-2026-10-19/masters/";
@@ -44,7 +44,7 @@ const slides=[
 const photo=document.querySelector("#hero-photo"),count=document.querySelector("#slide-count"),title=document.querySelector("#hero-title"),desc=document.querySelector("#hero-desc"),link=document.querySelector("#hero-link"),pause=document.querySelector("#pause");
 const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let index=0,paused=reduce,timer=null;
-function setSlide(n){index=(n+slides.length)%slides.length;const x=slides[index];photo.classList.add("fading");const img=new Image();img.onload=()=>{photo.style.backgroundImage='url("'+dir+x.file+'")';photo.classList.remove("fading")};img.src=dir+x.file;count.textContent=String(index+1).padStart(2,"0")+" / 04";title.textContent=x.title;desc.textContent=x.desc;link.textContent="Explore "+x.slug;link.href="#"+x.slug;document.querySelectorAll("[data-slide]").forEach(b=>b.setAttribute("aria-current",String(Number(b.dataset.slide)===index)));}
+function setSlide(n){index=(n+slides.length)%slides.length;const x=slides[index];photo.classList.add("fading");const img=new Image();img.onload=()=>{photo.style.backgroundImage='url("'+dir+x.file+'")';photo.classList.remove("fading")};img.src=dir+x.file;count.textContent=String(index+1).padStart(2,"0")+" / 04";title.textContent=x.title;desc.textContent=x.desc;link.textContent="Explore "+x.slug;link.href="/products?category="+x.slug;document.querySelectorAll("[data-slide]").forEach(b=>b.setAttribute("aria-current",String(Number(b.dataset.slide)===index)));}
 function syncTimer(){clearInterval(timer);pause.textContent=paused?"Play":"Pause";pause.setAttribute("aria-pressed",String(paused));if(!paused)timer=setInterval(()=>setSlide(index+1),6500)}
 document.querySelectorAll("[data-slide]").forEach(b=>b.addEventListener("click",()=>{setSlide(Number(b.dataset.slide));syncTimer()}));
 document.querySelector("#prev").addEventListener("click",()=>{setSlide(index-1);syncTimer()});document.querySelector("#next").addEventListener("click",()=>{setSlide(index+1);syncTimer()});pause.addEventListener("click",()=>{paused=!paused;syncTimer()});
