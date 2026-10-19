@@ -1,0 +1,12 @@
+$ node scripts/verify-ui.mjs
+{
+  "status": "pass",
+  "layoutChecks": 45,
+  "interactions": [
+    {
+      "interaction": "mobile navigation, focus containment, Escape and route change",
+      "status": "pass"
+    }
+  ],
+  "evidence": "/home/kaze/.hermes/cache/scratch/qww-review/ui-suite"
+}

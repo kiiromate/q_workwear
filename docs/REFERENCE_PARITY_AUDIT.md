@@ -1,5 +1,7 @@
 # Q Workwear | Reference fidelity audit
 
+> **CORRECTION / HISTORICAL RECORD:** The owner follow-up review reopened visual acceptance. Descriptions below of an About Us / Subsidiaries / CSR menu and subsidiary-card homepage contradict the live reference and this audit's saved reference screenshots. “BETTER FOR BUYERS” and photographic-realism claims below are not validated owner approval. Read [the current finalization directive](OWNER_REVIEW_AND_FINALIZATION_DIRECTIVE_2026-10-19.md), especially sections 2–5, before reusing this comparison. The original entries remain below for traceability and need a corrected evidence-led matrix.
+
 **Status: VERIFIED (`2026-10-19`, branch `feat/photoreal-showroom-issue-3`).**  
 Completed by rendering both `https://afrikandaholdings.com/` (live browser capture at `390×844` and `1440×900`) and the local static export (`out/` on `http://127.0.0.1:3016`) before and after the Issue #3 corrective build.
 

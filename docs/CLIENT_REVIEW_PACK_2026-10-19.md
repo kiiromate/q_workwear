@@ -1,5 +1,7 @@
 # Q Workwear | Client review presentation pack
 
+> **OWNER REVIEW RESULT: REVISIONS REQUIRED.** The owner rejected aspects of corporate logo placement, garment illustrations, reference fidelity and About copy. Earlier visual/realism PASS statements below are historical agent assessments, not current acceptance. Follow [the owner finalization directive](OWNER_REVIEW_AND_FINALIZATION_DIRECTIVE_2026-10-19.md) and new evidence before preparing another candidate. No production approval has been granted.
+
 **STATUS: READY FOR KAZE DESIGN REVIEW (`2026-10-19`, branch `feat/photoreal-showroom-issue-3`) — NOT YET APPROVED FOR PUBLIC RELEASE.**  
 Do not deploy to production or mark `APPROVED_PUBLIC` until Kaze approves the visual direction and Quddus & Tinah sign off on the client review items in Section 6.
 

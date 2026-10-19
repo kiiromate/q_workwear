@@ -1,5 +1,7 @@
 # Q Workwear | Production visual asset register
 
+> **CURRENT ACCEPTANCE OVERRIDE — OWNER FOLLOW-UP:** Branding acceptance is **REVIEW REQUIRED** for all active assets and derivatives until individually re-approved. **C01 and IND03 branding: REJECTED.** Preserve useful clean masters; the recommended IND03 correction is an unbranded construction-detail image. The historical `SELECTED_INTERNAL` and zoom-QA claims below are not current visual approval. Follow [Branding method and scale correction](BRANDING_METHOD_AND_SCALE_CORRECTION_2026-10-19.md), record application method/scale per asset and obtain renewed visual review before promotion.
+
 **Status: UPDATED 2026-10-19 (`feat/photoreal-showroom-issue-3`) — Photorealistic Master Suite Integrated (`SELECTED_INTERNAL`), Ready for Kaze Design Review.**
 All active images in `public/images/showcase/`, `public/images/editorial/`, and `public/images/lookbook/` are now genuine photorealistic garment photographs composited post-generation with authentic Q Workwear logo assets (`public/images/logo/`) via `scripts/composite_photoreal_assets.py`. All prior 2D geometric PIL posters (`scripts/generate_atelier_visuals.py`, `scripts/generate_lookbook_visuals.py`) have been retired and marked `ARCHIVED_ABSTRACT`.
 
