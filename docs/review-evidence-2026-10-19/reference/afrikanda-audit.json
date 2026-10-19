@@ -1,0 +1,522 @@
+{
+  "desktop": {
+    "title": "Home Page - Afrikanda Holdings Limited",
+    "headerHtmlSample": "<header id=\"header\" class=\"header transparent has-transparent has-sticky sticky-jump\">\n\t\t<div class=\"header-wrapper\">\n\t\t\t<div id=\"top-bar\" class=\"header-top hide-for-sticky flex-has-center hide-for-medium\">\n    <div class=\"flex-row container\">\n      <div class=\"flex-col hide-for-medium flex-left\">\n          <ul class=\"nav nav-left medium-nav-center nav-small  nav-\">\n              <li class=\"html custom html_nav_position_text\"><p>              </p></li>          </ul>\n      </div>\n\n      <div class=\"flex-col hide-for-medium flex-center\">\n          <ul class=\"nav nav-center nav-small  nav-\">\n              <li id=\"menu-item-686\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-32 current_page_item menu-item-686 active menu-item-design-default\"><a href=\"https://afrikandaholdings.com/\" aria-current=\"page\" class=\"nav-top-link\">Home</a></li>\n<li id=\"menu-item-442\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-442 menu-item-design-default has-dropdown\"><a href=\"https://afrikandaholdings.com/hospitality-home-collection/\" class=\"nav-top-link\" aria-expanded=\"false\" aria-haspopup=\"menu\">Hospitality &amp; Home Collection<i class=\"icon-angle-down\"></i></a>\n<ul class=\"sub-menu nav-dropdown nav-dropdown-default\">\n\t<li id=\"menu-item-1132\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1132\"><a href=\"https://afrikandaholdings.com/hospitality-collecti",
+    "navLinks": [
+      {
+        "text": "Home",
+        "href": "https://afrikandaholdings.com/",
+        "visible": true
+      },
+      {
+        "text": "Hospitality & Home Collection",
+        "href": "https://afrikandaholdings.com/hospitality-home-collection/",
+        "visible": true
+      },
+      {
+        "text": "Hospitality Collection",
+        "href": "https://afrikandaholdings.com/hospitality-collection/",
+        "visible": true
+      },
+      {
+        "text": "Home Collection",
+        "href": "https://afrikandaholdings.com/home-collection/",
+        "visible": true
+      },
+      {
+        "text": "Interior Design",
+        "href": "https://afrikandaholdings.com/interior-design/",
+        "visible": true
+      },
+      {
+        "text": "Commercial Design",
+        "href": "https://afrikandaholdings.com/commercial-design/",
+        "visible": true
+      },
+      {
+        "text": "Residential Design",
+        "href": "https://afrikandaholdings.com/residential-design/",
+        "visible": true
+      },
+      {
+        "text": "Consultancy",
+        "href": "https://afrikandaholdings.com/consultancy/",
+        "visible": true
+      },
+      {
+        "text": "Exotiká",
+        "href": "https://afrikandaholdings.com/exotika/",
+        "visible": true
+      },
+      {
+        "text": "Food & Beverages",
+        "href": "https://afrikandaholdings.com/food-beverages/",
+        "visible": true
+      },
+      {
+        "text": "Cosmetics",
+        "href": "https://afrikandaholdings.com/cosmetics/",
+        "visible": true
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://afrikandaholdings.com/elements/pages/contact-us/",
+        "visible": true
+      },
+      {
+        "text": "",
+        "href": "mailto:info@afrikandaholdings.com",
+        "visible": true
+      },
+      {
+        "text": "Newsletter",
+        "href": "#header-newsletter-signup",
+        "visible": true
+      },
+      {
+        "text": "",
+        "href": "/",
+        "visible": false
+      },
+      {
+        "text": "",
+        "href": "#",
+        "visible": false
+      },
+      {
+        "text": "",
+        "href": "mailto:info@afrikandaholdings.com",
+        "visible": false
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Sign up for Newsletter"
+      },
+      {
+        "tag": "H3",
+        "text": "HOSPITALITY & HOME COLLECTION"
+      },
+      {
+        "tag": "H3",
+        "text": "INTERIOR DESIGN"
+      },
+      {
+        "tag": "H3",
+        "text": "CONSULTancy"
+      },
+      {
+        "tag": "H3",
+        "text": "Exotiká"
+      },
+      {
+        "tag": "H3",
+        "text": "Login"
+      }
+    ]
+  },
+  "mobileMenuOpened": false,
+  "mobileButtons": [
+    {
+      "tag": "A",
+      "cls": "skip-link screen-reader-text",
+      "text": "Skip to content",
+      "aria": null,
+      "rect": {
+        "x": -1,
+        "y": -1,
+        "width": 1,
+        "height": 1,
+        "top": -1,
+        "right": 0,
+        "bottom": 0,
+        "left": -1
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Home",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Hospitality & Home Collection",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Hospitality Collection",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Home Collection",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Interior Design",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Commercial Design",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Residential Design",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Consultancy",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Exotiká",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Food & Beverages",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "Cosmetics",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "nav-top-link",
+      "text": "Contact Us",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "icon plain email tooltip",
+      "text": "",
+      "aria": "Send us an email",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "tooltip ",
+      "text": "Newsletter",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "",
+      "text": "",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "is-small",
+      "text": "",
+      "aria": "Menu",
+      "rect": {
+        "x": 15,
+        "y": 0,
+        "width": 24.3125,
+        "height": 49.171875,
+        "top": 0,
+        "right": 39.3125,
+        "bottom": 49.171875,
+        "left": 15
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "icon plain email tooltip",
+      "text": "",
+      "aria": "Send us an email",
+      "rect": {
+        "x": 327.671875,
+        "y": 5,
+        "width": 41,
+        "height": 23,
+        "top": 5,
+        "right": 368.671875,
+        "bottom": 28,
+        "left": 327.671875
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "button white is-link",
+      "text": "Learn More",
+      "aria": null,
+      "rect": {
+        "x": -238.171875,
+        "y": 479.296875,
+        "width": 86.34375,
+        "height": 31.453125,
+        "top": 479.296875,
+        "right": -151.828125,
+        "bottom": 510.75,
+        "left": -238.171875
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "fill",
+      "text": "",
+      "aria": null,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "button white is-link",
+      "text": "Learn More",
+      "aria": null,
+      "rect": {
+        "x": 151.828125,
+        "y": 467.296875,
+        "width": 86.34375,
+        "height": 31.453125,
+        "top": 467.296875,
+        "right": 238.171875,
+        "bottom": 498.75,
+        "left": 151.828125
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "fill",
+      "text": "",
+      "aria": null,
+      "rect": {
+        "x": 390,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 780,
+        "bottom": 844,
+        "left": 390
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "button white is-link",
+      "text": "Learn More",
+      "aria": null,
+      "rect": {
+        "x": 541.828125,
+        "y": 467.8984375,
+        "width": 86.34375,
+        "height": 31.453125,
+        "top": 467.8984375,
+        "right": 628.171875,
+        "bottom": 499.3515625,
+        "left": 541.828125
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "fill",
+      "text": "",
+      "aria": null,
+      "rect": {
+        "x": 780,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 1170,
+        "bottom": 844,
+        "left": 780
+      }
+    },
+    {
+      "tag": "A",
+      "cls": "button white is-link",
+      "text": "Learn More",
+      "aria": null,
+      "rect": {
+        "x": 931.828125,
+        "y": 450.6484375,
+        "width": 86.34375,
+        "height": 31.453125,
+        "top": 450.6484375,
+        "right": 1018.171875,
+        "bottom": 482.1015625,
+        "left": 931.828125
+      }
+    }
+  ]
+}

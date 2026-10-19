@@ -1,32 +1,42 @@
 # Website assets and provenance record
 
-> **VISUAL QA STATUS UPDATED 2026-10-19:** This document describes the **current geometric / illustrative assets** from the existing agent implementation. Despite having authentic Q logos composited, these **FAILED owner visual review** because the garments are not realistic photographs. They are NOT final approved assets for the proposed client preview. For corrective direction see [Photoreal image production](PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md) and [Visual asset registry](VISUAL_ASSET_REGISTRY.md). Keep this as historical provenance and replace the public asset registration only when new photographs have actually been produced, reviewed and integrated.
+**Last Updated:** 2026-10-19 (`feat/photoreal-showroom-issue-3`)  
+**Status:** Photorealistic commercial garment studies integrated (`SELECTED_INTERNAL`), composited post-production with authentic Q Workwear logo assets from `public/images/logo/`. Ready for Kaze design review prior to client preview.
 
-**Last Updated:** 2026-10-16  
-**Status:** Branded illustrative placeholders actively composited with authentic Q Workwear logo assets.
+> **2026-10-19 Corrective Update (Issue #3):** All previous 2D geometric Pillow illustrations (`scripts/generate_atelier_visuals.py` and `scripts/generate_lookbook_visuals.py`) that failed visual QA have been retired (`ARCHIVED_ABSTRACT`) and replaced with photorealistic garment photography processed by `scripts/composite_photoreal_assets.py`. See [`docs/VISUAL_ASSET_REGISTRY.md`](VISUAL_ASSET_REGISTRY.md) for the complete asset-by-asset metadata register and [`docs/review-evidence-2026-10-19/contact-sheets/`](review-evidence-2026-10-19/contact-sheets/) for 200%-zoom before/after logo compositing evidence.
 
-The five showcase images are bespoke illustrative studies designed to demonstrate garment styles and atelier craft. They incorporate the **authentic Q Workwear logo files from `public/images/logo/`** in natural positions (tailor specification cards, woven garment labels, chef crests, heavy industrial patches, and 3D puff embroidery). They illustrate capability and aesthetic direction; they are **not** documentary evidence of specific workshop premises, staff portraits, or completed client orders.
+## 1. Production Photorealistic Assets & Compositing Register
 
-## Showcase Assets & Compositing Register
+Every active photograph in `public/images/showcase/`, `public/images/editorial/`, and `public/images/lookbook/` is an illustrative garment study (`image_class: illustrative_concept`) showing realistic textile drape, construction details, and natural Q Workwear branding placements (woven cuff labels, stitched chest patches, breast pocket embroidery, and cap crown embroidery). None of these images are claimed to depict named clients, Q Workwear founders/staff, or a specific factory interior.
 
-| Slot | Source Pipeline | Official Brand Mark Used | Placement & Technique | Production WebP Path |
-|---|---|---|---|---|
-| **Opening Hero** (Table) | `scripts/generate_atelier_visuals.py`, `create_hero_atelier` | `public/images/logo/q-mark-red.png` (80px height, Lanczos) | Centered tailor's specification card with topstitch border & brass pin | `public/images/showcase/hero-atelier-table.webp` (1920×1080) |
-| **Corporate Suiting** | Same script, `create_corporate_showcase` | `public/images/logo/q-mark-red.png` (72px height, Lanczos) | Woven brand label pinned on chest placket with red accent stripe | `public/images/showcase/cat-corporate-suiting.webp` (1200×900) |
-| **Hospitality & Culinary** | Same script, `create_hospitality_showcase` | `public/images/logo/q-mark-white.png` (64px height, Lanczos) | Chef jacket chest crest with red border topstitch | `public/images/showcase/cat-hospitality-culinary.webp` (1200×900) |
-| **Industrial & Safety** | Same script, `create_industrial_showcase` | `public/images/logo/q-mark-white.png` (70px height, Lanczos) | Heavy-duty Cordura patch on navy drill chest with safety-red border | `public/images/showcase/cat-industrial-safety.webp` (1200×900) |
-| **Branded Apparel** | Same script, `create_branded_showcase` | `public/images/logo/q-mark-white.png` (76px & 52px, Lanczos) | 3D puff embroidery badge on polo left chest and twill cap front panel | `public/images/showcase/cat-branded-apparel.webp` (1200×900) |
-| **Craftsmanship** (Archive) | Same script, `create_craftsmanship_showcase` | `public/images/logo/q-mark-red.png` (64px height, Lanczos) | Kraft paper pattern maker's stamp | `public/images/showcase/tailor-craftsmanship.webp` (1200×900) |
+| ID | Production WebP Path(s) | Clean Master Path | Official Brand Mark Used | Physical Placement & Blending Technique | Dimensions & Size |
+|---|---|---|---|---|---|
+| **H01** | `public/images/showcase/hero-atelier-table.webp` (`editorial/hero-atelier-table.webp`) | `docs/review-evidence-2026-10-19/masters/H01_master.jpg` | `public/images/logo/q-workwear-red-transparent.png` | Stitched woven damask cuff label (`40px` width, rotated `+58°`, luminance weave transfer `0.18` at `(738, 347)`) | `1376×768` (`180,410 B`) |
+| **H02** | `public/images/editorial/hero-uniform-rail.webp` | `docs/review-evidence-2026-10-19/masters/H02_master.jpg` | `q-mark-red.png` & `q-mark-white.png` | Left-chest embroidery on chef coat (`(652, 345)`), work jacket (`(896, 395)`), and cream polo (`(1115, 360)`) | `1376×768` (`93,892 B`) |
+| **H03** | `public/images/editorial/hero-model-detail.webp` | `docs/review-evidence-2026-10-19/masters/H03_master.jpg` | `q-mark-red.png` | Subtle shirt cuff monogram (`15px` width, rotated `-18°`, weave transfer `0.18` at `(624, 407)`) | `1376×768` (`137,184 B`) |
+| **C01** | `public/images/showcase/cat-corporate-suiting.webp` (`editorial/cat-corporate-suiting.webp`, `lookbook/lookbook-corporate.webp`) | `docs/review-evidence-2026-10-19/masters/C01_master.jpg` | `q-mark-white.png` | Navy blazer breast pocket crest (`17px` width, rotated `-1.5°`, weave transfer `0.18` at `(672, 355)`) | `896×1200` (`96,096 B`) |
+| **C03** | `public/images/editorial/corporate-tailoring-detail.webp` | Optical macro crop of `H03_master.jpg` | `q-mark-red.png` | Close-up suiting sleeve and embroidered light-blue shirt cuff | `1000×750` (`116,618 B`) |
+| **HOS01** | `public/images/showcase/cat-hospitality-culinary.webp` (`editorial/cat-hospitality-culinary.webp`, `lookbook/lookbook-chef.webp`) | `docs/review-evidence-2026-10-19/masters/HOS01_master.jpg` | `q-mark-red.png` & `q-workwear-white-transparent.png` | Chef coat left-chest embroidery (`(462, 425)`) + olive canvas apron pocket mark (`(638, 610)`) | `896×1200` (`91,574 B`) |
+| **HOS03** | `public/images/editorial/hospitality-apron-detail.webp` (`lookbook/lookbook-apron.webp`) | Optical macro crop of `HOS01_master.jpg` | `q-workwear-white-transparent.png` | Close-up of olive heavy canvas apron pocket, brass corner rivets, and woven straps | `800×1066` (`70,462 B`) |
+| **IND01** | `public/images/showcase/cat-industrial-safety.webp` (`editorial/cat-industrial-safety.webp`, `lookbook/lookbook-industrial.webp`) | `docs/review-evidence-2026-10-19/masters/IND01_master.jpg` | `q-workwear-white-transparent.png` & `q-mark-red.png` | Stitched navy rectangular chest patch (`(210, 388)`) + hi-vis vest neck tag (`(678, 285)`) | `896×1200` (`104,040 B`) |
+| **IND02** | `public/images/editorial/industrial-coverall.webp` | `docs/review-evidence-2026-10-19/masters/IND02_master.jpg` | `q-workwear-white-transparent.png` | Stitched navy rectangular pocket patch on one-piece coverall (`34px` width at `(368, 336)`) | `896×1200` (`83,560 B`) |
+| **IND03** | `public/images/editorial/industrial-seam-detail.webp` | `docs/review-evidence-2026-10-19/masters/IND03_master.jpg` | `q-mark-white.png` | Direct twill embroidery above heavy brass zipper & bar-tack seam (`34px` width, `+20°` at `(420, 285)`) | `1200×896` (`282,392 B`) |
+| **BR01** | `public/images/showcase/cat-branded-apparel.webp` (`editorial/cat-branded-apparel.webp`) | `docs/review-evidence-2026-10-19/masters/BR01_master.jpg` | `q-workwear-white-transparent.png` & `q-mark-white.png` | Navy piqué polo left chest (`(448, 395)`) + structured 6-panel twill cap front crown (`(718, 835)`) | `896×1200` (`92,498 B`) |
+| **BR02** | `public/images/editorial/branded-polo-fit.webp` | `docs/review-evidence-2026-10-19/masters/BR02_master.jpg` | `q-workwear-white-transparent.png` | Left-chest embroidery on charcoal honeycomb piqué polo (`46px` width at `(618, 345)`) | `896×1200` (`346,746 B`) |
+| **BR03** | `public/images/editorial/branded-cap-tee-detail.webp` | Optical macro crop of `BR01_master.jpg` | `q-mark-white.png` | Close-up of structured 6-panel navy cap crown embroidery and folded cotton tee | `1000×750` (`59,468 B`) |
+| **CR02** | `public/images/showcase/tailor-craftsmanship.webp` (`editorial/atelier-cuff-detail.webp`, `lookbook/lookbook-hands.webp`) | Optical macro crop of `H01_master.jpg` | `q-workwear-red-transparent.png` | Close-up of artisan hands finishing navy shirt cuff with woven Q Workwear label and swatches | `1000×750` (`118,824 B`) |
 
-## Authentic Brand Identity Assets
+## 2. Authentic Brand Identity Assets
 
 The red and white logos in `public/images/logo/` are authentic client-supplied assets:
 - `q-workwear-original.png`: Original client mark on red background (color and proportions reference).
-- `q-workwear-red-transparent.png` and `q-workwear-white-transparent.png`: Transparent full lockups (emblem + "Q WORKWEAR UNIFORMS & SAFETY").
-- `q-mark-red.png` and `q-mark-white.png`: Isolated tight-crop emblem marks (184×235) for crisp rendering on UI components, navigation, and garment compositing.
+- `q-workwear-red-transparent.png` and `q-workwear-white-transparent.png`: Transparent full lockups (emblem + "Q WORKWEAR").
+- `q-mark-red.png` and `q-mark-white.png`: Isolated tight-crop emblem marks (`184×235`) for crisp rendering on UI components, navigation, and garment compositing.
 
 Typography: Barlow Regular (400), Medium (500), and SemiBold (600) are self-hosted in `public/fonts/` under the SIL Open Font License (`public/fonts/OFL.txt`). Zero external font or tracking requests occur at runtime.
 
-## Presentation Deck & Lookbook Governance
+## 3. Presentation Deck & Lookbook Governance
 
-Images extracted from `docs/BUSINESS PORTFOLIO.pptx` are cataloged in `docs/LOOKBOOK_ASSET_MANIFEST.md`. All unpermissioned client logos (slide 40) are strictly withheld. Client-supplied photos of real commissions will be introduced under a distinctly labeled "Selected work" section once formal permission is documented. Illustrative concepts remain clearly tagged as inspirations.
+All 42 slides and 45 embedded media files in `docs/BUSINESS PORTFOLIO.pptx` were privately audited during Wave A (`2026-10-19`):
+- Third-party client logos on Slide 40 (`image42.jpg`–`image45.png`) are strictly withheld (`BLOCKED_RIGHTS`).
+- Product slide images (Slides 8–39) are unverified supplier/stock catalog cutouts and are withheld (`BLOCKED_RIGHTS`) unless Quddus and Tinah confirm commercial web rights or supply original photography of Q-made commissions.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { KeyboardEvent, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
@@ -9,35 +9,62 @@ import { GarmentArtwork } from './GarmentArtwork';
 
 export function GarmentExplorer() {
   const [selectedId, setSelectedId] = useState<GarmentId>('corporate');
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const activeGarment = garmentItems.find((item) => item.id === selectedId) || garmentItems[0];
+
+  function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const count = garmentItems.length;
+    let nextIndex: number | null = null;
+
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      nextIndex = (index + 1) % count;
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      nextIndex = (index - 1 + count) % count;
+    } else if (event.key === 'Home') {
+      nextIndex = 0;
+    } else if (event.key === 'End') {
+      nextIndex = count - 1;
+    }
+
+    if (nextIndex !== null) {
+      event.preventDefault();
+      const nextItem = garmentItems[nextIndex];
+      setSelectedId(nextItem.id);
+      tabRefs.current[nextIndex]?.focus();
+    }
+  }
 
   return (
     <section className="section container garment-explorer-section" aria-labelledby="garment-explorer-title">
       <div className="section-header">
         <div>
-          <span className="section-eyebrow">Interactive showroom</span>
+          <span className="section-eyebrow">Garment details &amp; branding</span>
           <h2 className="section-title" id="garment-explorer-title">Choose your workwear.</h2>
         </div>
         <p className="lead section-lead-compact">
-          Explore interactive vector silhouettes tailored for Rwandan business, hospitality, industrial, and team environments.
+          Select a garment family to inspect construction details, branding placements, and tailoring options for your team.
         </p>
       </div>
 
-      {/* Garment Selector Rail / Tabs */}
+      {/* Garment Selector Rail / Tabs (WAI-ARIA APG roving tabindex, click/keyboard only) */}
       <div className="garment-rail" role="tablist" aria-label="Workwear category selector">
-        {garmentItems.map((item) => {
+        {garmentItems.map((item, idx) => {
           const isSelected = item.id === selectedId;
           return (
             <button
               key={item.id}
+              ref={(el) => {
+                tabRefs.current[idx] = el;
+              }}
               type="button"
               role="tab"
               id={`garment-tab-${item.id}`}
+              tabIndex={isSelected ? 0 : -1}
               aria-selected={isSelected}
               aria-controls={`garment-panel-${item.id}`}
               className={`garment-tab ${isSelected ? 'garment-tab-active' : ''}`}
               onClick={() => setSelectedId(item.id)}
-              onMouseEnter={() => setSelectedId(item.id)}
+              onKeyDown={(e) => handleTabKeyDown(e, idx)}
             >
               <div className="garment-artwork-frame">
                 <GarmentArtwork id={item.id} selected={isSelected} />
@@ -93,14 +120,11 @@ export function GarmentExplorer() {
           <div className="garment-photo-frame">
             <Image
               src={activeGarment.image}
-              alt={`${activeGarment.title} tailored uniform study`}
+              alt={activeGarment.imageAlt}
               fill
               sizes="(max-width: 1050px) 90vw, 560px"
               className="garment-photo"
             />
-            <div className="garment-photo-overlay">
-              <span className="photo-label">Curated uniform study // Kigali Atelier</span>
-            </div>
           </div>
         </div>
       </div>

@@ -13,36 +13,49 @@ try {
   await collectionsBtn.click();
   const dropdown = page.locator('#header-collections-dropdown');
   assert.equal(await dropdown.isVisible(), true, 'collections dropdown opens on click');
-  assert.equal(await dropdown.getByRole('menuitem').count(), 5, '4 sector items + All collections link');
-  // Test Escape key closes dropdown
+  assert.equal(await dropdown.getByRole('link').count(), 5, '4 sector links + All collections link');
+  // Test Escape key closes dropdown and restores focus to trigger button
   await page.keyboard.press('Escape');
   assert.equal(await dropdown.isVisible(), false, 'Escape closes dropdown');
+  assert.equal(await collectionsBtn.evaluate((el) => document.activeElement === el), true, 'Escape returns focus to Collections button');
   // Re-open and click sector
   await collectionsBtn.click();
   assert.equal(await dropdown.isVisible(), true, 'reopens on click');
-  await dropdown.getByRole('menuitem', { name: 'Hospitality', exact: false }).click();
+  await dropdown.getByRole('link', { name: 'Hospitality', exact: false }).click();
   await page.waitForURL('**/products/?category=hospitality');
-  checks.push('header collections disclosure dropdown, Escape key, and sector routing');
+  checks.push('header collections disclosure dropdown, Escape focus return, and sector routing');
 
-  // 2. Interactive SVG Garment Explorer on Homepage
+  // 2. Interactive SVG Garment Explorer on Homepage (click + WAI-ARIA keyboard roving focus, no hover mutation)
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   const garmentRail = page.getByRole('tablist', { name: 'Workwear category selector' });
   assert.equal(await garmentRail.getByRole('tab').count(), 4, '4 SVG category tabs in rail');
-  
-  // Default is corporate
+
+  // Default is corporate with roving tabindex=0
   assert.equal(await page.locator('#garment-tab-corporate').getAttribute('aria-selected'), 'true');
+  assert.equal(await page.locator('#garment-tab-corporate').getAttribute('tabindex'), '0');
+  assert.equal(await page.locator('#garment-tab-hospitality').getAttribute('tabindex'), '-1');
   assert.ok((await page.locator('.garment-spotlight-title').textContent()).includes('Corporate'));
-  
-  // Select Industrial tab
+
+  // Hovering over another tab must NOT unexpectedly mutate selection
+  await page.locator('#garment-tab-branded').hover();
+  assert.equal(await page.locator('#garment-tab-corporate').getAttribute('aria-selected'), 'true', 'hover does not mutate active tab');
+
+  // Keyboard ArrowRight advances focus & selection from Corporate -> Hospitality
+  await page.locator('#garment-tab-corporate').focus();
+  await page.keyboard.press('ArrowRight');
+  assert.equal(await page.locator('#garment-tab-hospitality').getAttribute('aria-selected'), 'true');
+  assert.equal(await page.locator('#garment-tab-hospitality').evaluate((el) => document.activeElement === el), true, 'ArrowRight moves focus to next tab');
+
+  // Click Industrial tab
   await page.locator('#garment-tab-industrial').click();
   assert.equal(await page.locator('#garment-tab-industrial').getAttribute('aria-selected'), 'true');
   assert.ok((await page.locator('.garment-spotlight-title').textContent()).includes('Industrial'));
   assert.equal(await page.locator('.garment-svg-selected').count(), 1, 'active SVG garment highlighted');
-  
+
   // Click explore collection in spotlight
   await page.locator('.garment-spotlight-actions').getByRole('link', { name: 'Explore collection' }).click();
   await page.waitForURL('**/products/?category=industrial');
-  checks.push('interactive SVG garment explorer selection, spotlight update and collection handoff');
+  checks.push('interactive SVG garment explorer keyboard roving focus, click selection, spotlight update and collection handoff');
 
   // 3. Category filters and browser history
   await page.goto(`${origin}/products/?category=hospitality`, { waitUntil: 'networkidle' });
@@ -72,7 +85,7 @@ try {
   await page.getByLabel('Quantity', { exact: false }).fill('24');
   await page.getByLabel('Tell us about your team', { exact: false }).fill('Navy & white. Logo placement: left chest.');
   assert.equal(await form.evaluate((element) => element.checkValidity()), true, 'valid enquiry accepted');
-  
+
   await page.evaluate(() => addEventListener('click', (event) => {
     if (event.target.closest?.('a[href^="mailto:"]')) event.preventDefault();
   }, true));
@@ -105,13 +118,13 @@ try {
 
   // 7. Lookbook cards and enquiry handoff
   await page.goto(`${origin}/work/`, { waitUntil: 'networkidle' });
-  assert.equal(await page.locator('.lookbook-card').count(), 6, '6 curated lookbook items render');
-  assert.equal(await page.locator('.lookbook-lane-badge').isVisible(), true, 'concept notice badge present');
+  assert.equal(await page.locator('.lookbook-card').count(), 12, '12 photoreal lookbook items render');
+  assert.equal(await page.locator('.lookbook-disclosure-note').isVisible(), true, 'single gallery disclosure note present');
   await page.getByRole('link', { name: 'Enquire', exact: true }).first().click();
   await page.waitForURL('**/contact/?product=**');
   const prefilledProduct = await page.locator('#quote-garment').inputValue();
   assert.ok(prefilledProduct.length > 0, 'product prefilled from lookbook enquire click');
-  checks.push('lookbook 6 curated cards, concept lane badge and enquiry handoff');
+  checks.push('lookbook 12 photoreal cards, single gallery disclosure note and enquiry handoff');
 
   // 8. Missing route 404
   const notFound = await page.goto(`${origin}/does-not-exist/`, { waitUntil: 'networkidle' });

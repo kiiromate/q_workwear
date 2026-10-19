@@ -56,7 +56,7 @@
 .dropdown-chevron { transition: transform .2s ease; }
 .dropdown-chevron-open { transform: rotate(180deg); }
 .dropdown-panel { position: absolute; top: calc(100% + 2px); left: 0; width: 320px; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 16px 36px rgba(32, 36, 33, 0.09); padding: 12px; display: flex; flex-direction: column; z-index: 50; animation: dropdown-fade 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.dropdown-sectors { display: flex; flex-direction: column; gap: 4px; }
+.dropdown-sectors { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
 .dropdown-item { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; text-decoration: none; transition: background .15s ease; }
 .dropdown-item:hover { background: #f0f2eb; }
 .dropdown-item-title { font-weight: 500; font-size: 15px; color: var(--ink); }
@@ -89,7 +89,7 @@
 .hero-reveal { animation: hero-reveal-kf 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 @keyframes hero-reveal-kf { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes dropdown-fade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.hero-frame { position: relative; aspect-ratio: 2.65; overflow: hidden; background: #d7d8d2; }
+.hero-frame { position: relative; aspect-ratio: 2.35; overflow: hidden; background: #d7d8d2; }
 .hero-frame img { object-fit: cover; object-position: center; }
 .section-header { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 36px; }
 .home-collections { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
@@ -175,7 +175,7 @@
 .garment-tab { border: 1px solid var(--line); background: var(--paper); padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; cursor: pointer; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
 .garment-tab:hover { border-color: var(--brand); transform: translateY(-4px); }
 .garment-tab-active { border-color: var(--brand); background: #ffffff; box-shadow: 0 12px 32px rgba(183, 51, 41, 0.08); }
-.garment-artwork-frame { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; padding: 8px; }
+.garment-artwork-frame { width: 100%; height: 156px; display: flex; align-items: center; justify-content: center; padding: 8px; }
 .garment-svg { width: 100%; height: 100%; object-fit: contain; transition: transform .25s ease; }
 .garment-tab:hover .garment-svg { transform: scale(1.04); }
 .garment-tab-info { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
@@ -193,43 +193,40 @@
 .garment-photo-frame { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #deded7; }
 .garment-photo { object-fit: cover; transition: transform .6s cubic-bezier(.22,1,.36,1); }
 .garment-spotlight:hover .garment-photo { transform: scale(1.025); }
-.garment-photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(20, 22, 20, 0.7)); color: #ffffff; }
-.photo-label { font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
 
 /* About values section */
-.about-values-section { margin-top: clamp(48px, 6vw, 80px); }
+.about-values-section { border-top: 1px solid var(--line); }
 .section-lead-compact { max-width: 54ch; }
-.about-values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 36px; }
-.value-card { background: #ffffff; border: 1px solid var(--line); padding: 32px 24px; display: flex; flex-direction: column; }
-.value-number { font-family: var(--font-barlow-condensed, inherit); font-size: 28px; font-weight: 700; color: var(--brand); margin-bottom: 16px; letter-spacing: 0.04em; }
-.value-card-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--ink); letter-spacing: -0.01em; }
-.value-card-desc { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
+.about-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.value-card { background: #ffffff; border: 1px solid var(--line); border-top: 3px solid var(--brand); padding: 28px 24px; display: flex; flex-direction: column; }
+.value-card-title { font-size: 21px; font-weight: 500; margin-bottom: 10px; color: var(--ink); letter-spacing: -0.01em; }
+.value-card-desc { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 0; }
 
 /* Lookbook & inspiration */
-.lookbook-body { margin-top: clamp(32px, 4vw, 48px); margin-bottom: clamp(64px, 8vw, 112px); }
-.lookbook-lane-badge { display: inline-flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid var(--line); padding: 10px 18px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand); margin-bottom: 36px; }
-.lane-badge-icon { color: var(--brand); flex-shrink: 0; }
-.lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.lookbook-disclosure-note { margin-top: 14px; font-size: 15px; line-height: 1.5; color: var(--muted); max-width: 62ch; border-left: 3px solid var(--brand); padding-left: 14px; }
+.lookbook-body { margin-top: clamp(24px, 3vw, 40px); margin-bottom: clamp(64px, 8vw, 112px); }
+.lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: start; }
 .lookbook-card { background: #ffffff; border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .lookbook-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05); }
 .lookbook-card-image-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #deded7; overflow: hidden; }
+.lookbook-aspect-portrait { aspect-ratio: 4 / 5; }
+.lookbook-aspect-landscape { aspect-ratio: 4 / 3; }
 .lookbook-card-img { object-fit: cover; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 .lookbook-card:hover .lookbook-card-img { transform: scale(1.035); }
 .lookbook-card-overlay { position: absolute; top: 12px; left: 12px; }
 .card-concept-pill { display: inline-block; background: rgba(20, 22, 20, 0.85); color: #ffffff; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 10px; backdrop-filter: blur(4px); }
 .lookbook-card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-.card-provenance-tag { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 8px; }
-.lookbook-card-title { font-size: 21px; font-weight: 500; line-height: 1.25; margin-bottom: 12px; color: var(--ink); }
-.lookbook-card-desc { font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 24px; flex-grow: 1; }
+.lookbook-card-title { font-size: 21px; font-weight: 500; line-height: 1.25; margin-bottom: 10px; color: var(--ink); }
+.lookbook-card-desc { font-size: 15px; line-height: 1.6; color: var(--muted); margin-bottom: 20px; flex-grow: 1; }
 .lookbook-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
 .button-small { min-height: 38px; padding: 8px 16px; font-size: 14px; gap: 8px; }
 
 /* Custom Order Callout */
 .lookbook-custom-callout { margin-top: 56px; background: #ffffff; border: 1px solid var(--line); border-left: 4px solid var(--brand); padding: clamp(28px, 4vw, 44px); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.custom-callout-text h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 500; margin-bottom: 8px; color: var(--ink); }
+.custom-callout-text h2, .custom-callout-text h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 500; margin-bottom: 8px; color: var(--ink); }
 .custom-callout-text p { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 65ch; margin: 0; }
 
-@media (min-width: 1600px) { .hero-frame { aspect-ratio: 2.8; } }
+@media (min-width: 1600px) { .hero-frame { aspect-ratio: 2.6; } }
 @media (max-width: 1050px) {
   .header-nav { display: none; }
   .menu-toggle { display: inline-flex; }
@@ -238,23 +235,25 @@
   .garment-spotlight { grid-template-columns: 1fr; gap: 32px; }
   .home-collections { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
   .process { grid-template-columns: 1fr; gap: 40px; }
-  .about-values-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .about-values-grid { grid-template-columns: 1fr; gap: 20px; }
   .lookbook-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .lookbook-custom-callout { flex-direction: column; align-items: start; gap: 24px; }
 }
 @media (max-width: 640px) {
-  .header-inner, .mobile-menu-top { height: 76px; min-height: 76px; }
+  .header-inner, .mobile-menu-top { height: 72px; min-height: 72px; }
   .brand-logo { gap: 8px; }
   .brand-logo img { width: 34px; height: 34px; }
   .brand-name { font-size: 18px; }
   .header-quote { display: none; }
-  .hero-heading { grid-template-columns: 1fr; gap: 24px; padding-bottom: 32px; }
-  .hero-heading .lead { max-width: 34ch; }
-  .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; margin-top: 20px; }
-  .hero-actions .button { width: 100%; }
-  .hero-frame { aspect-ratio: 1.12; }
+  .hero { padding-top: 24px; }
+  .hero-heading { grid-template-columns: 1fr; gap: 14px; padding-bottom: 20px; }
+  .hero-heading .display { font-size: clamp(40px, 10.5vw, 52px); }
+  .hero-heading .lead { max-width: 36ch; font-size: 17px; }
+  .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .hero-actions .button { flex: 1 1 150px; padding-inline: 14px; }
+  .hero-frame { aspect-ratio: 1.45; }
   .garment-rail { grid-template-columns: 1fr 1fr; gap: 10px; margin-block: 28px 24px; }
-  .garment-artwork-frame { height: 120px; padding: 4px; }
+  .garment-artwork-frame { height: 112px; padding: 4px; }
   .garment-tab { padding: 12px 8px; }
   .garment-tab-title { font-size: 14px; }
   .garment-tab-sub { display: none; }

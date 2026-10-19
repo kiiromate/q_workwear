@@ -12,6 +12,7 @@ export interface GarmentItem {
   highlights: string[];
   href: string;
   image: string;
+  imageAlt: string;
 }
 
 export const garmentItems: GarmentItem[] = [
@@ -20,44 +21,64 @@ export const garmentItems: GarmentItem[] = [
     categorySlug: 'corporate',
     title: 'Corporate Suiting & Office',
     subtitle: 'Blazers, shirts & separates',
-    tagline: 'Tailored for front desk and executive presence',
-    description: 'Precision-tailored blazers, crisp long- and short-sleeved shirts, and coordinated trousers crafted for Rwandan corporate teams and front-desk environments.',
-    highlights: ['Tailored lapel rolls & breathable linings', 'Custom embroidery & chest monogramming', 'Coordinated executive trousers & skirts'],
+    tagline: 'Front desk and office teams',
+    description: 'Tailored blazers, long- and short-sleeved office shirts, and coordinated trousers or skirts for reception, management, and client-facing teams.',
+    highlights: [
+      'Structured blazers & breathable shirting',
+      'Subtle chest, cuff, or collar embroidery',
+      'Coordinated trousers, skirts & waistcoats',
+    ],
     href: '/products?category=corporate',
-    image: '/images/showcase/cat-corporate-suiting.webp',
+    image: '/images/editorial/hero-model-detail.webp',
+    imageAlt: 'Tailored charcoal blazer and crisp light-blue office shirt cuff with embroidered Q mark',
   },
   {
     id: 'hospitality',
     categorySlug: 'hospitality',
     title: 'Hospitality & Culinary',
     subtitle: 'Chef jackets, aprons & service wear',
-    tagline: 'Kitchen durability with dining room presentation',
-    description: 'Double-breasted chef coats, reinforced duck canvas aprons, and sleek service uniforms designed for restaurant kitchens, hotels, and cafes in Kigali.',
-    highlights: ['Heat-tolerant cotton drills & canvas', 'Reinforced stress points & bar-tacks', 'Cross-back leather & webbing apron straps'],
+    tagline: 'Kitchens, cafés and hotels',
+    description: 'Double-breasted chef jackets, heavy cotton canvas bib and waist aprons, and coordinated service uniforms built for daily kitchen and dining room work.',
+    highlights: [
+      'Durable cotton twill & heavy canvas',
+      'Reinforced pocket seams & brass hardware',
+      'Embroidered chest marks & woven apron labels',
+    ],
     href: '/products?category=hospitality',
-    image: '/images/showcase/cat-hospitality-culinary.webp',
+    image: '/images/editorial/hospitality-apron-detail.webp',
+    imageAlt: 'Heavy olive canvas bib apron detail with brass rivets, woven cotton straps and stitched Q Workwear mark',
   },
   {
     id: 'industrial',
     categorySlug: 'industrial',
-    title: 'Industrial & Technical',
-    subtitle: 'Overalls, jackets & safety vests',
-    tagline: 'Practical protection for workshops and job sites',
-    description: 'Heavy-duty cotton drill overalls, utility work trousers, dust coats, and high-visibility apparel engineered for trades, workshops, and agriculture.',
-    highlights: ['Heavyweight tear-resistant twill', 'Reflective micro-prismatic trim details', 'Multi-pocket utility and tool loops'],
+    title: 'Industrial & Workshop',
+    subtitle: 'Overalls, jackets & high-vis vests',
+    tagline: 'Workshops, engineering and site crews',
+    description: 'Heavy-duty cotton twill coveralls, utility work jackets, cargo trousers, dust coats, and high-visibility vests tailored to your site requirements.',
+    highlights: [
+      'Heavyweight cotton twill & reinforced bar-tacks',
+      'High-visibility reflective tape options',
+      'Stitched chest patches & utility pocket layouts',
+    ],
     href: '/products?category=industrial',
-    image: '/images/showcase/cat-industrial-safety.webp',
+    image: '/images/editorial/industrial-coverall.webp',
+    imageAlt: 'Deep-navy heavy cotton twill one-piece work coverall with stitched Q Workwear chest patch',
   },
   {
     id: 'branded',
     categorySlug: 'branded',
     title: 'Branded Apparel & Teams',
-    subtitle: 'Polos, tees, caps & outerwear',
-    tagline: 'Your organization’s identity on everyday essentials',
-    description: 'Piqué polos, combed cotton tees, structured 6-panel caps, and lightweight fleece vests customized with clean embroidery or print for your team.',
-    highlights: ['Honeycomb micro-piqué cotton', 'High-density 3D puff embroidery', 'Custom color tipping & branded patches'],
+    subtitle: 'Polos, T-shirts, caps & gilets',
+    tagline: 'Everyday team identity and events',
+    description: 'Honeycomb piqué polos, combed cotton crew-neck T-shirts, structured six-panel twill caps, and gilets customized with your organization’s colors and mark.',
+    highlights: [
+      'Breathable piqué & heavyweight cotton jersey',
+      'Clean chest & cap crown embroidery',
+      'Contrast collar tipping & custom colorways',
+    ],
     href: '/products?category=branded',
-    image: '/images/showcase/cat-branded-apparel.webp',
+    image: '/images/editorial/branded-polo-fit.webp',
+    imageAlt: 'Charcoal honeycomb piqué polo shirt with embroidered Q Workwear mark on the left chest',
   },
 ];
 

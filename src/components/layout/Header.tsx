@@ -12,10 +12,11 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [collectionsOpen, setCollectionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const close = useCallback(() => setIsOpen(false), []);
   const pathname = usePathname().replace(/\/$/, '') || '/';
 
-  // Close dropdown on outside click or Escape
+  // Close disclosure on outside click or Escape (returning focus to toggle)
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -25,6 +26,7 @@ export function Header() {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setCollectionsOpen(false);
+        toggleButtonRef.current?.focus();
       }
     }
     if (collectionsOpen) {
@@ -37,7 +39,7 @@ export function Header() {
     };
   }, [collectionsOpen]);
 
-  // Close dropdown on route change
+  // Close disclosure on route change
   useEffect(() => {
     setCollectionsOpen(false);
   }, [pathname]);
@@ -52,11 +54,11 @@ export function Header() {
           <nav className="header-nav" aria-label="Main navigation">
             <div className="nav-dropdown-wrapper" ref={dropdownRef}>
               <button
+                ref={toggleButtonRef}
                 type="button"
                 className={`nav-dropdown-toggle ${isCollectionsActive ? 'nav-link-active' : ''}`}
                 onClick={() => setCollectionsOpen((prev) => !prev)}
                 aria-expanded={collectionsOpen}
-                aria-haspopup="true"
                 aria-controls="header-collections-dropdown"
               >
                 <span>Collections</span>
@@ -67,26 +69,29 @@ export function Header() {
                 />
               </button>
               {collectionsOpen && (
-                <div id="header-collections-dropdown" className="dropdown-panel" role="menu">
-                  <div className="dropdown-sectors">
+                <div
+                  id="header-collections-dropdown"
+                  className="dropdown-panel"
+                  aria-label="Workwear collections"
+                >
+                  <ul className="dropdown-sectors">
                     {categories.map((cat) => (
-                      <Link
-                        key={cat.id}
-                        href={`/products?category=${cat.id}`}
-                        className="dropdown-item"
-                        role="menuitem"
-                        onClick={() => setCollectionsOpen(false)}
-                      >
-                        <span className="dropdown-item-title">{cat.name}</span>
-                        <span className="dropdown-item-desc">{cat.tagline}</span>
-                      </Link>
+                      <li key={cat.id}>
+                        <Link
+                          href={`/products?category=${cat.id}`}
+                          className="dropdown-item"
+                          onClick={() => setCollectionsOpen(false)}
+                        >
+                          <span className="dropdown-item-title">{cat.name}</span>
+                          <span className="dropdown-item-desc">{cat.tagline}</span>
+                        </Link>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                   <div className="dropdown-footer">
                     <Link
                       href="/products"
                       className="dropdown-all-link"
-                      role="menuitem"
                       onClick={() => setCollectionsOpen(false)}
                     >
                       All collections &rarr;

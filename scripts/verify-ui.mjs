@@ -6,7 +6,7 @@ import AxeBuilder from '@axe-core/playwright';
 const origin = process.env.TEST_URL || 'http://localhost:3016';
 const evidence = process.env.TEST_OUTPUT || '.impeccable/review';
 const routes = ['/', '/products/', '/work/', '/about/', '/contact/'];
-const viewports = [320, 360, 375, 390, 768, 1024, 1050, 1440];
+const viewports = [320, 360, 375, 390, 768, 1024, 1050, 1051, 1440];
 const browser = await chromium.launch({ headless: true });
 const results = [];
 await mkdir(evidence, { recursive: true });
@@ -34,7 +34,11 @@ try {
       }));
       assert.equal(state.overflow, false, `${route} overflow at ${width}px`);
       assert.deepEqual(state.failedImages, [], `${route} broken images`);
-      assert.doesNotMatch(state.text, /\b(Ethos|Pathos|Logos|provisional|demonstration only|draft narrative|pending client|EN ISO 20471|300 GSM)\b/i, `${route} editorial leaks`);
+      assert.doesNotMatch(
+        state.text,
+        /\b(Ethos|Pathos|Logos|provisional|demonstration only|draft narrative|pending client|EN ISO 20471|300 GSM|interactive vector silhouettes|Curated uniform study|micro-prismatic|3D puff embroidery|Oxford shirts)\b/i,
+        `${route} editorial leaks`
+      );
       const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
       assert.deepEqual(axe.violations.map(({ id, nodes }) => ({ id, targets: nodes.map((node) => node.target) })), [], `${route} accessibility at ${width}px`);
       if (width === 390 || width === 1440) {

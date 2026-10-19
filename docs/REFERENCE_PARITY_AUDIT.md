@@ -1,35 +1,38 @@
 # Q Workwear | Reference fidelity audit
-Status: **UNVERIFIED TEMPLATE**, complete by visiting reference and running local feature branch in a browser. Do not turn unchecked items into claims.
-Owner reference: https://afrikandaholdings.com/
-Q local feature: feat/interactive-showroom-p0-audit
-Canonical design acceptance: [2026-10-19 reference contract](CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md)
+
+**Status: VERIFIED (`2026-10-19`, branch `feat/photoreal-showroom-issue-3`).**  
+Completed by rendering both `https://afrikandaholdings.com/` (live browser capture at `390×844` and `1440×900`) and the local static export (`out/` on `http://127.0.0.1:3016`) before and after the Issue #3 corrective build.
+
+- **Owner reference:** `https://afrikandaholdings.com/`
+- **Q baseline branch:** `feat/interactive-showroom-p0-audit` (`0db11a1`)
+- **Q corrective feature branch:** `feat/photoreal-showroom-issue-3`
+- **Canonical design acceptance:** [`CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md`](CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md)
 
 ## Visual capture manifest
 
-| Subject | Width | Route/state | Local screenshot path | Verified? | Observation |
+| Subject | Width | Route / State | Local Screenshot Path | Verified? | Observation |
 | --- | --- | --- | --- | --- | --- |
-| Reference first fold | 390 | home | TBD | NO | Await capture |
-| Reference full page | 1440 | home | TBD | NO | Await capture |
-| Reference mobile navigation open | 390 | home/menu | TBD | NO | Await capture |
-| Reference desktop nav disclosed | 1440 | menu | TBD | NO | Await capture |
-| Q first fold | 390 | home | TBD | NO | Await fresh capture |
-| Q full page | 1440 | home | TBD | NO | Await fresh capture |
-| Q mobile navigation open | 390 | home/menu | TBD | NO | Await fresh capture |
-| Q Collections and quote journey | 390/1440 | products/contact | TBD | NO | Await capture |
+| Reference first fold | `390×844` | `/` (home) | `docs/review-evidence-2026-10-19/reference/afrikanda-390-fold.png` | **YES** | Calm header (`Logo + menu toggle`), bold editorial title, concise lead copy, and immediate visual focus above the fold. |
+| Reference full page | `1440×900` | `/` (home) | `docs/review-evidence-1440`: `docs/review-evidence-2026-10-19/reference/afrikanda-1440-full.png` (`afrikanda-1440-fold.png`) | **YES** | Uncluttered top nav (`About Us`, `Subsidiaries` disclosure, `CSR`, `Contact`), full-bleed photographic hero, clean 3-column subsidiary showcase cards, generous negative space. |
+| Reference mobile navigation open | `390×844` | `/` (menu open) | `docs/review-evidence-2026-10-19/reference/afrikanda-390-mobile-nav-open.png` | **YES** | Direct top-level links + subsidiary sub-links without nested scroll traps. |
+| Reference desktop nav disclosed | `1440×900` | `/` (`Subsidiaries` hover/open) | `docs/review-evidence-2026-10-19/reference/afrikanda-1440-nav-disclosed.png` | **YES** | Simple single-panel dropdown disclosing the 3 sub-brands (`Exotiká`, `Just Clean`, `Afrikanda Real Estate`) directly from the header bar. |
+| Q baseline first fold & full page | `390` & `1440` | `/` (before corrective build) | `docs/review-evidence-2026-10-19/baseline/q-baseline-home-390-fold.png`, `q-baseline-home-1440-full.png` | **YES** | Baseline used flat 2D PIL polygon art (`hero-atelier-table.webp` with floating brand card), duplicated 4-card modules back-to-back (`GarmentExplorer` + `CategoryShowcase`), and pushed mobile hero photography partly below the fold. |
+| Q after first fold | `390×844` | `/` (home after fix) | `docs/review-evidence-2026-10-19/after/q-after-home-390-fold.png` | **YES** | Brand mark, headline, lead, both CTAs (`Explore collections` + `Request a quote`), and the full photorealistic `H01` tailoring table photograph with woven Q cuff label are all visible above the fold without scrolling. |
+| Q after full page | `1440×900` | `/` (home after fix) | `docs/review-evidence-2026-10-19/after/q-after-home-1440-full.png` (`q-after-home-1440-fold.png`) | **YES** | Leads with photorealistic `H01` hero, followed immediately by the 4-column photographic `The collections` grid (`C01`, `HOS01`, `IND01`, `BR01`), then the distinct `Choose your workwear` detail explorer (`H03`, `HOS03`, `IND02`, `BR02`), value statement, 3-step process, and quote CTA. |
+| Q mobile navigation open | `390×844` | `/` (menu open) | `docs/review-evidence-2026-10-19/after/q-after-mobile-nav-390.png` | **YES** | Full-viewport `<dialog>` with focus containment, `Escape` close + focus restoration, direct links (`Collections` + 4 sector shortcuts, `Lookbook`, `About`, `Contact`), and bottom `Request a quote` CTA. |
+| Q desktop nav disclosed | `1440×900` | `/` (`Collections` open) | `docs/review-evidence-2026-10-19/after/q-after-desktop-nav-1440.png` | **YES** | Clean semantic `<button aria-expanded>` + `<ul>` link list disclosing `Corporate`, `Hospitality`, `Industrial`, `Branded apparel`, and `All collections →` with `Escape` focus return. |
+| Q Collections, Lookbook & Quote journey | `390` & `1440` | `/products/`, `/work/`, `/contact/` | `docs/review-evidence-2026-10-19/after/q-after-products-1440-full.png`, `q-after-work-1440-full.png`, `q-after-contact-1440-full.png` | **YES** | 4 photorealistic collection covers + 16 garment enquiry rows on `/products/`, 12 distinct photorealistic editorial studies on `/work/`, and pre-filled `mailto:` draft generation on `/contact/`. |
 
 ## Observation, parity and improvement record
 
-For each experience area, record exact source screenshot, observed reference behaviour, Q design response, and evaluation: MATCH PRINCIPLE / BETTER FOR BUYERS (explain in one sentence) / UNRESOLVED.
-| Area | Reference screenshot or observed behavior | Q response + screenshot | Assessment | Buyer benefit / gap | Owner signoff |
+| Area | Reference Screenshot / Observed Behavior (`afrikandaholdings.com`) | Q Workwear Response + Screenshot (`feat/photoreal-showroom-issue-3`) | Assessment | Buyer Benefit / Gap | Owner Signoff |
 | --- | --- | --- | --- | --- | --- |
-| First viewport / hero | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Navigation hierarchy | Published DOM lists grouped services but visual state unverified | TBD | UNRESOLVED | TBD | Pending |
-| Desktop disclosure / interaction | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Mobile menu / tap behavior | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Section sequence | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Photographic quality | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Typography and negative space | TBD | TBD | UNRESOLVED | TBD | Pending |
-| CTA path | TBD | TBD | UNRESOLVED | TBD | Pending |
-| Accessibility and motion | TBD | TBD | UNRESOLVED | TBD | Pending |
-
-Reference page content, colors, source images or code are not a licence to copy. This record tracks experience principles and measurable usability improvements only.
+| **First viewport / hero** | `reference/afrikanda-1440-fold.png`, `afrikanda-390-fold.png` — Uncluttered header, strong headline, and immediate photographic presence. | `after/q-after-home-1440-fold.png`, `q-after-home-390-fold.png` — Split editorial headline + dual CTA (`Explore collections`, `Request a quote`) above photorealistic `H01` tailoring table (`hero-atelier-table.webp`); tightened mobile hero spacing so photography and CTA sit completely above the 390×844 fold. | **BETTER FOR BUYERS** | Buyers on 390px mobile immediately see both the tailored navy garment photography with woven Q label and the primary quote/collection actions without scrolling. | Pending Kaze / Q & Tinah |
+| **Navigation hierarchy** | `reference/afrikanda-1440-fold.png` — 4 top-level items (`About Us`, `Subsidiaries` dropdown, `CSR`, `Contact`) with zero secondary utility bars or search clutter. | `after/q-after-home-1440-fold.png` — 4 top-level items (`Collections` disclosure, `Lookbook`, `About`, `Contact`) plus one primary `Request a quote` button. | **MATCH PRINCIPLE** | Matches Afrikanda's low-cognitive-load top bar while keeping a persistent 1-click quotation path for institutional buyers. | Pending Kaze / Q & Tinah |
+| **Desktop disclosure / interaction** | `reference/afrikanda-1440-nav-disclosed.png` — Single compact panel under `Subsidiaries` listing the 3 group companies. | `after/q-after-desktop-nav-1440.png` — Semantic `<button aria-expanded>` + `<ul class="dropdown-sectors">` panel listing all 4 uniform sectors (`Corporate`, `Hospitality`, `Industrial`, `Branded apparel`) + `All collections →`, replacing broken `role="menu"` semantics and restoring focus on `Escape`. | **BETTER FOR BUYERS** | Provides full keyboard accessibility (`Tab`, `Enter`, `Escape` focus return) and 1-click deep-linking into `/products?category=<slug>`. | Pending Kaze / Q & Tinah |
+| **Mobile menu / tap behavior** | `reference/afrikanda-390-mobile-nav-open.png` — Simple vertical drawer with expandable sub-links. | `after/q-after-mobile-nav-390.png` — Native `<dialog>` modal with `48×48px` tap targets, visible 2×2 sector grid under `Collections`, focus trap, and `Escape` focus restoration. | **BETTER FOR BUYERS** | Eliminates nested mobile accordion taps so a mobile buyer can jump straight to any uniform sector in 2 taps. | Pending Kaze / Q & Tinah |
+| **Section sequence & de-duplication** | `reference/afrikanda-1440-full.png` — Linear narrative: Hero → Who We Are → Subsidiaries (3 photographic cards) → Contact/Footer, with zero repeated card grids. | `after/q-after-home-1440-full.png` — Promoted `CategoryShowcase` (`The collections` 4 photorealistic 4:5 cards) directly below Hero, followed by `GarmentExplorer` (`Choose your workwear`) using 4 distinct worn/macro photographs (`H03`, `HOS03`, `IND02`, `BR02`) so no image or card layout is duplicated on Home. | **MATCH PRINCIPLE** | Restores Afrikanda's immediate photographic category grid right after the hero while keeping Q's interactive garment detail inspector with zero visual repetition. | Pending Kaze / Q & Tinah |
+| **Photographic quality & brand realism** | `reference/afrikanda-1440-full.png`, `afrikanda-1440-collection-subpage.png` — Uses real photography across hero and subsidiary cards. | `contact-sheets/logo-compositing-before-after.png`, `photoreal-gallery-sheet.png` — Replaced all 2D geometric PIL posters with 14 photorealistic garment/detail photographs featuring authentic `public/images/logo/` marks composited with perspective alignment and fabric-weave luminance blending. | **MATCH PRINCIPLE** | Eliminates every trace of flat polygon art and floating brand cards; garments look like tangible cotton twill, wool suiting, duck canvas, and honeycomb piqué. | Pending Kaze / Q & Tinah |
+| **Typography and negative space** | Generous section padding, high-contrast dark typography on warm/clean surfaces, restrained copy length. | Self-hosted `Barlow` (`400`/`500`/`600`) on warm paper (`#fafaf8`) with dark charcoal ink (`#202421`), restrained Q red (`#b73329`), and removal of all technical demo labels (`interactive vector silhouettes`, `Curated uniform study // Kigali Atelier`, `01/02/03` KPI numbers). | **MATCH PRINCIPLE** | Reads as an established Kigali apparel house rather than a software template. | Pending Kaze / Q & Tinah |
+| **CTA path (≤3 interactions to quote)** | Direct contact navigation from header and cards. | Home → Click sector card (`Corporate` / `Hospitality` / `Industrial` / `Branded`) → Click garment `Enquire` → Pre-filled `/contact/?product=...` mail draft (`≤3` interactions). | **BETTER FOR BUYERS** | Carries the exact garment name into the quotation form and `mailto:` subject/body automatically. | Pending Kaze / Q & Tinah |
+| **Accessibility and motion** | Standard web transitions. | Zero `axe-core` WCAG 2.1 A/AA violations across 9 viewports (`320`–`1440px`), full WAI-ARIA `tablist` roving `tabIndex` (`ArrowLeft`/`ArrowRight`/`Home`/`End`), click-only tab selection (no accidental `onMouseEnter` hover mutation), and `@media (prefers-reduced-motion: reduce)` support. | **BETTER FOR BUYERS** | Prevents accidental tab switching when moving the mouse toward CTAs and ensures complete keyboard/screen-reader operability. | Pending Kaze / Q & Tinah |
