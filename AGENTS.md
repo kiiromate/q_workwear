@@ -1,5 +1,14 @@
 # Q Workwear | IDE agent instructions
 
+> **CURRENT VISUAL CORRECTION, 2026-10-19:** The previous build passes many functional tests but FAILED owner visual review because the "branded" images are geometric PIL posters rather than photorealistic garments. **Read these documents FIRST** before any more code or asset changes:
+> 1. [Client/reference acceptance contract](docs/CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md): the clients strongly prefer https://afrikandaholdings.com/ and significant deviations need documented customer value.
+> 2. [Photoreal brand photography plan + 29 shot-specific prompts](docs/PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md): actual garments, natural authentic embroidery, source rights and visual QA.
+> 3. [Corrective agent execution plan](docs/CORRECTIVE_BUILD_EXECUTION_2026-10-19.md): ordered waves, gates, screenshots, manual review and handoff.
+> 4. [Reference parity template](docs/REFERENCE_PARITY_AUDIT.md), [image registry](docs/VISUAL_ASSET_REGISTRY.md), [client review pack](docs/CLIENT_REVIEW_PACK_2026-10-19.md): fill with verifiable evidence, don't assert completion prematurely.
+>
+> **Precedence:** These 2026-10-19 correction directives override older directions that reused five geometric illustrations or considered logo compositing alone sufficient. **Do not merge/deploy unapproved work.** Implement on a separate branch from the updated plan; do not change production. Existing functionality is a baseline to preserve, not a reason to maintain the wrong visual system.
+
+
 You are implementing an **interactive, branded, low-maintenance quotation showroom** for Q Workwear, Kigali. Read this file **before changing code**.
 
 ## Required reading, in order
