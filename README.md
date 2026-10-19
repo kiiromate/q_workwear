@@ -2,7 +2,11 @@
 
 A photography-led workwear showcase for Quddus and Tinah in Kigali. Next.js App Router, React, TypeScript and Tailwind; static export for Vercel or Cloudflare Pages.
 
-## Next build: IDE-agent handoff (2026-10-16)
+## Current design correction / agent start (2026-10-19)
+
+**The existing branch passed technical smoke tests but failed owner visual review.** Start with [AGENTS.md](AGENTS.md), then read the [Afrikanda-reference design contract](docs/CLIENT_REFERENCE_VISUAL_ACCEPTANCE_2026-10-19.md), [photoreal Q garment image prompts](docs/PHOTOREAL_Q_WORKWEAR_IMAGE_PRODUCTION_2026-10-19.md), and [agent execution checklist](docs/CORRECTIVE_BUILD_EXECUTION_2026-10-19.md). Work with [visual asset registry](docs/VISUAL_ASSET_REGISTRY.md), [reference comparison evidence](docs/REFERENCE_PARITY_AUDIT.md) and [client review pack template](docs/CLIENT_REVIEW_PACK_2026-10-19.md). Do not publish 2D geometric posters with a pasted logo as finished garment photography. Do not declare reference parity without actual browser captures. More photographs may be used if each adds real product value and rights permit.
+
+## Earlier next build handoff (2026-10-16)
 
 **Agents: start with [AGENTS.md](AGENTS.md).** The current canonical implementation brief is [Next build agent handoff](docs/NEXT_BUILD_AGENT_HANDOFF_2026-10-16.md), with [branded photo and PPT lookbook sourcing](docs/BRANDED_MEDIA_LOOKBOOK_2026-10-16.md) and [interactive SVG specification](docs/INTERACTIVE_GARMENT_SVG_SPEC.md).
 
