@@ -9,14 +9,16 @@ interface GarmentArtworkProps {
 }
 
 export function GarmentArtwork({ id, selected = false, className = '', ariaHidden = true }: GarmentArtworkProps) {
-  const primaryStroke = '#202421';
-  const accentRed = selected ? '#e0483a' : '#b73329';
-  const neutralFill = selected ? '#ffffff' : '#f7f7f3';
-  const secondaryFill = selected ? '#f0f2eb' : '#ededE8';
+  const outStroke = '#29333a';
+  const lineStroke = '#42515b';
+  const stitchStroke = '#88929a';
+  const accentRed = selected ? '#c8372d' : '#b73329';
+  const garmentFill = selected ? '#ffffff' : '#f2f1ed';
+  const secondaryFill = selected ? '#f4e8d9' : '#ede4d7';
 
   return (
     <svg
-      viewBox="0 0 320 400"
+      viewBox="12 36 256 334"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`garment-svg ${selected ? 'garment-svg-selected' : ''} ${className}`}
@@ -25,290 +27,308 @@ export function GarmentArtwork({ id, selected = false, className = '', ariaHidde
     >
       {id === 'corporate' && (
         <g className="garment-group-corporate">
-          {/* Inner Collared Shirt */}
+          {/* Tailored collared dress shirt beneath blazer */}
           <path
-            d="M 125 50 L 160 115 L 195 50 L 160 40 Z"
+            d="M111 73 L140 92 L169 73 L170 298 L110 298 Z"
             fill="#ffffff"
-            stroke={primaryStroke}
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Shirt collar stand & spread collar points */}
+          <path
+            d="M124 64 Q140 70 156 64 L169 73 L140 85 L111 73 Z"
+            fill="#f7f7f4"
+            stroke={outStroke}
             strokeWidth="2"
             strokeLinejoin="round"
           />
-          {/* Shirt Collar Points */}
           <path
-            d="M 125 50 L 140 105 L 160 75 L 180 105 L 195 50"
+            d="M111 73 L124 64 L140 83 L122 111 Z M169 73 L156 64 L140 83 L158 111 Z"
             fill="#ffffff"
-            stroke={primaryStroke}
-            strokeWidth="2"
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
-          {/* Shirt Placket & Inner Tie/Seam */}
-          <line x1="160" y1="75" x2="160" y2="240" stroke={primaryStroke} strokeWidth="1.8" strokeDasharray="4 2" />
-          <circle cx="160" cy="130" r="3" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.5" />
-          <circle cx="160" cy="170" r="3" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.5" />
-          <circle cx="160" cy="210" r="3" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.5" />
+          {/* Shirt center placket & buttons */}
+          <path d="M140 85 V235" stroke={lineStroke} strokeWidth="1.7" strokeLinecap="round" />
+          <circle cx="140" cy="126" r="2.2" fill="#485461" />
+          <circle cx="140" cy="166" r="2.2" fill="#485461" />
+          <circle cx="140" cy="206" r="2.2" fill="#485461" />
 
-          {/* Blazer Silhouette & Body */}
+          {/* Blazer outer silhouette: sloped shoulders, natural sleeves & curved front hem */}
           <path
-            d="M 125 50 L 55 95 L 40 260 L 75 255 L 85 145 L 75 350 L 160 370 L 245 350 L 235 145 L 245 255 L 280 260 L 265 95 L 195 50 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
+            d="M107 75 C98 78 76 84 65 99 L47 145 L34 252 L60 261 L88 156 L86 311 Q140 322 194 311 L192 156 L220 261 L246 252 L233 145 L215 99 Q206 84 173 75 L155 90 L140 105 L125 90 Z"
+            fill={garmentFill}
+            stroke={outStroke}
+            strokeWidth="2.6"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
-
-          {/* Blazer Sleeves & Seams */}
-          <path d="M 85 145 L 55 95" stroke={primaryStroke} strokeWidth="2" />
-          <path d="M 235 145 L 265 95" stroke={primaryStroke} strokeWidth="2" />
-
-          {/* Tailored Lapels (Notch Lapel) */}
+          {/* Armhole scye seams & sleeve cuff vent lines */}
           <path
-            d="M 125 50 L 100 135 L 122 150 L 104 195 L 160 250 L 216 195 L 198 150 L 220 135 L 195 50 Z"
-            fill={secondaryFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
+            d="M88 156 L65 99 M192 156 L215 99 M39 242 L62 250 M241 242 L218 250"
+            stroke={lineStroke}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          {/* Tailored notch lapels */}
+          <path
+            d="M107 75 L89 115 L109 134 L96 153 L139 223 L140 233 L114 133 Z M173 75 L191 115 L171 134 L184 153 L141 223 L140 233 L166 133 Z"
+            fill="#ffffff"
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
-
-          {/* Lapel Roll Seams */}
-          <line x1="125" y1="50" x2="160" y2="250" stroke={primaryStroke} strokeWidth="1.8" />
-          <line x1="195" y1="50" x2="160" y2="250" stroke={primaryStroke} strokeWidth="1.8" />
-
-          {/* Lapel Buttonhole Brand Red Accent */}
-          <line x1="108" y1="110" x2="118" y2="114" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-
-          {/* Breast Welt Pocket with Red Pocket Square Accent */}
-          <rect x="86" y="170" width="32" height="6" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.8" />
-          <path d="M 94 170 L 102 160 L 110 170 Z" fill={accentRed} stroke={accentRed} strokeWidth="1" />
-
-          {/* Lower Flap Pockets */}
-          <rect x="74" y="275" width="46" height="12" fill={secondaryFill} stroke={primaryStroke} strokeWidth="2" />
-          <rect x="200" y="275" width="46" height="12" fill={secondaryFill} stroke={primaryStroke} strokeWidth="2" />
-
-          {/* Front Horn Buttons */}
-          <circle cx="160" cy="265" r="5" fill="#202421" stroke={primaryStroke} strokeWidth="1.5" />
-          <circle cx="160" cy="305" r="5" fill="#202421" stroke={primaryStroke} strokeWidth="1.5" />
-
-          {/* Subtle Pick-Stitching Detail */}
-          <path d="M 72 342 L 160 362 L 248 342" stroke={primaryStroke} strokeWidth="1.2" strokeDasharray="3 3" />
+          {/* Center closure, waist darts & tailored welt pockets */}
+          <path
+            d="M140 233 L139 315 M121 236 L108 298 M159 236 L172 298"
+            stroke={lineStroke}
+            strokeWidth="1.7"
+            strokeLinecap="round"
+          />
+          <circle cx="141" cy="248" r="3.2" fill="#485461" />
+          <circle cx="141" cy="282" r="3.2" fill="#485461" />
+          <path
+            d="M76 247 H102 V259 H76 Z M178 247 H204 V259 H178 Z M82 184 H103 V190 H82 Z"
+            stroke={lineStroke}
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+          {/* Pick-stitching along hem & restrained lapel buttonhole bar-tack */}
+          <path d="M85 304 Q140 313 195 304" stroke={stitchStroke} strokeWidth="1.2" strokeDasharray="3 4" />
+          <line x1="103" y1="122" x2="113" y2="125" stroke={accentRed} strokeWidth="2.2" strokeLinecap="round" />
         </g>
       )}
 
       {id === 'hospitality' && (
         <g className="garment-group-hospitality">
-          {/* Chef Stand / Mandarin Collar */}
+          {/* Double-breasted chef jacket (positioned upper-left as distinct garment) */}
           <path
-            d="M 125 45 C 142 38 178 38 195 45 L 195 68 C 178 62 142 62 125 68 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
+            d="M75 78 L94 70 Q114 75 133 78 Q150 75 164 70 L186 82 L200 152 L183 160 L178 133 L177 288 Q128 299 79 288 L78 133 L72 160 L55 152 L65 82 Z"
+            fill={garmentFill}
+            stroke={outStroke}
+            strokeWidth="2.6"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
-
-          {/* Apron Neck Strap */}
+          {/* Curved Mandarin stand collar */}
           <path
-            d="M 120 60 C 110 20 210 20 200 60"
-            fill="none"
-            stroke={accentRed}
-            strokeWidth="3.5"
+            d="M94 68 Q129 60 164 68 L166 84 Q129 77 92 84 Z"
+            fill="#ffffff"
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinejoin="round"
+          />
+          {/* Armhole seams, turnback cuffs & double-breasted placket lines */}
+          <path
+            d="M78 133 L65 82 M178 133 L186 82 M58 143 L74 150 M197 143 L181 150 M126 83 L118 286 M148 83 L154 286"
+            stroke={lineStroke}
+            strokeWidth="1.8"
             strokeLinecap="round"
           />
+          {/* Two columns of cloth knot buttons */}
+          <g fill="#40494c">
+            <circle cx="119" cy="110" r="3" />
+            <circle cx="151" cy="110" r="3" />
+            <circle cx="117" cy="144" r="3" />
+            <circle cx="153" cy="144" r="3" />
+            <circle cx="115" cy="178" r="3" />
+            <circle cx="155" cy="178" r="3" />
+          </g>
+          {/* Sleeve thermometer/pen pocket on left arm */}
+          <path d="M62 104 L71 106 L69 124 L60 122 Z" stroke={lineStroke} strokeWidth="1.4" />
+          <path d="M80 279 Q128 290 176 279" stroke={stitchStroke} strokeWidth="1.2" strokeDasharray="3 4" />
 
-          {/* Chef Double-Breasted Jacket Sleeves and Silhouette */}
-          <path
-            d="M 125 68 L 50 110 L 35 250 L 70 245 L 80 150 L 75 350 L 245 350 L 240 150 L 250 245 L 285 250 L 270 110 L 195 68 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
-
-          {/* Apron Body (Hanging Bib & Skirt) */}
-          <path
-            d="M 112 140 L 208 140 L 226 360 L 94 360 Z"
-            fill={secondaryFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
-
-          {/* Apron Waist Webbing Ties */}
-          <path d="M 94 220 L 55 235" stroke={primaryStroke} strokeWidth="3" strokeLinecap="round" />
-          <path d="M 226 220 L 265 235" stroke={primaryStroke} strokeWidth="3" strokeLinecap="round" />
-
-          {/* Double-Breasted Knot Buttons (Visible above and beside bib) */}
-          <circle cx="140" cy="90" r="4" fill="#202421" />
-          <circle cx="180" cy="90" r="4" fill="#202421" />
-          <circle cx="140" cy="118" r="4" fill="#202421" />
-          <circle cx="180" cy="118" r="4" fill="#202421" />
-
-          {/* Apron Chest Pocket with Pen Divider */}
-          <rect x="135" y="155" width="50" height="40" fill={neutralFill} stroke={primaryStroke} strokeWidth="1.8" />
-          <line x1="155" y1="155" x2="155" y2="195" stroke={primaryStroke} strokeWidth="1.5" strokeDasharray="2 2" />
-
-          {/* Pocket Bar-Tack Reinforcements in Brand Red */}
-          <line x1="133" y1="157" x2="141" y2="157" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-          <line x1="177" y1="157" x2="185" y2="157" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-
-          {/* Kangaroo Waist Pocket */}
-          <path
-            d="M 108 245 L 212 245 L 216 325 L 104 325 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2"
-          />
-          <line x1="160" y1="245" x2="160" y2="325" stroke={primaryStroke} strokeWidth="1.5" strokeDasharray="3 3" />
-          {/* Red bar-tacks on waist pocket */}
-          <line x1="106" y1="248" x2="114" y2="248" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-          <line x1="206" y1="248" x2="214" y2="248" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
+          {/* Heavy canvas bib apron hanging separately (offset & slightly angled) */}
+          <g transform="translate(132 152) rotate(6)">
+            {/* Woven cotton neck loop */}
+            <path d="M46 14 Q70 -16 94 14" stroke={lineStroke} strokeWidth="2.2" strokeLinecap="round" />
+            {/* Apron bib & skirt body */}
+            <path
+              d="M40 14 L100 14 L116 162 L24 162 Z"
+              fill={secondaryFill}
+              stroke={outStroke}
+              strokeWidth="2.4"
+              strokeLinejoin="round"
+            />
+            {/* Waist webbing ties */}
+            <path d="M28 76 L-6 84 M110 76 L138 84" stroke={lineStroke} strokeWidth="2" strokeLinecap="round" />
+            {/* Divided utility pouch pocket with brass corner rivets */}
+            <path
+              d="M44 106 H96 V140 H44 Z M70 106 V140"
+              fill="#fbfaf7"
+              stroke={lineStroke}
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+            <circle cx="47" cy="109" r="1.8" fill={accentRed} />
+            <circle cx="93" cy="109" r="1.8" fill={accentRed} />
+            <path d="M31 154 H109" stroke={stitchStroke} strokeWidth="1.2" strokeDasharray="3 4" />
+            {/* Woven brand tab at upper bib corner */}
+            <path d="M45 23 H59" stroke={accentRed} strokeWidth="2.5" strokeLinecap="round" />
+          </g>
         </g>
       )}
 
       {id === 'industrial' && (
         <g className="garment-group-industrial">
-          {/* Heavy Work Jacket Collar */}
+          {/* One-piece heavy twill coverall with integrated sleeves & two separate trouser legs */}
           <path
-            d="M 120 55 L 90 90 L 135 95 L 160 100 L 185 95 L 230 90 L 200 55 Z"
+            d="M106 80 L67 102 L48 206 L67 216 L90 138 L90 286 L96 350 L133 350 L139 260 L147 260 L153 350 L188 350 L194 284 L194 138 L217 216 L236 206 L217 102 L174 80 L156 101 L140 112 L123 101 Z"
+            fill={garmentFill}
+            stroke={outStroke}
+            strokeWidth="2.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Spread workwear collar */}
+          <path
+            d="M118 67 Q140 73 162 67 L175 82 L160 103 L140 88 L120 103 L105 82 Z"
+            fill="#ffffff"
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Raglan/set-in armhole seams, concealed brass zip placket & waistband */}
+          <path
+            d="M90 138 L67 102 M194 138 L217 102 M140 112 V260 M91 250 H193"
+            stroke={lineStroke}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          {/* Dual chest utility pockets with pointed flaps */}
+          <path
+            d="M98 175 H133 V210 H98 Z M150 175 H185 V210 H150 Z"
+            fill="#ffffff"
+            stroke={lineStroke}
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M98 175 L115.5 185 L133 175 M150 175 L167.5 185 L185 175"
+            stroke={lineStroke}
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+          {/* Stitched rectangular chest patch above pocket */}
+          <rect
+            x="153"
+            y="153"
+            width="28"
+            height="14"
+            rx="1.5"
             fill={secondaryFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
+            stroke={accentRed}
+            strokeWidth="1.8"
           />
-
-          {/* Main Heavy Drill Body & Sleeves */}
+          {/* High-visibility reflective tape bands on sleeves, waist & legs */}
           <path
-            d="M 120 55 L 45 105 L 30 265 L 68 260 L 80 160 L 70 355 L 250 355 L 240 160 L 252 260 L 290 265 L 275 105 L 200 55 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
+            d="M66 130 L88 135 L85 150 L63 145 Z M196 135 L218 130 L221 145 L199 150 Z M91 232 H193 V243 H91 Z M93 302 H135 V311 H93 Z M150 302 H191 V311 H150 Z"
+            fill="#ece77d"
+            stroke="#b7b36c"
+            strokeWidth="1.2"
           />
-
-          {/* Reinforced Yoke Across Chest */}
-          <path d="M 45 105 L 160 120 L 275 105" stroke={primaryStroke} strokeWidth="2" fill="none" />
-
-          {/* Upper High-Vis Reflective Band */}
-          <polygon
-            points="68,145 252,145 250,175 70,175"
-            fill={selected ? '#e8ec98' : '#e0e470'}
-            stroke={primaryStroke}
-            strokeWidth="2"
+          {/* Reinforced knee & hem stitching */}
+          <path
+            d="M98 344 H132 M154 344 H187 M91 284 H136 M148 284 H193"
+            stroke={stitchStroke}
+            strokeWidth="1.2"
+            strokeDasharray="3 4"
           />
-          {/* Micro-Prismatic Silver Reflective Stripe */}
-          <polygon points="69,153 251,153 250,167 70,167" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.2" />
-
-          {/* Lower High-Vis Reflective Band */}
-          <polygon
-            points="70,270 250,270 250,300 70,300"
-            fill={selected ? '#e8ec98' : '#e0e470'}
-            stroke={primaryStroke}
-            strokeWidth="2"
-          />
-          <polygon points="70,278 250,278 250,292 70,292" fill="#ffffff" stroke={primaryStroke} strokeWidth="1.2" />
-
-          {/* Center Heavy Brass Zipper */}
-          <line x1="160" y1="100" x2="160" y2="355" stroke={primaryStroke} strokeWidth="4" />
-          <rect x="156" y="115" width="8" height="14" fill={accentRed} stroke={primaryStroke} strokeWidth="1.5" />
-
-          {/* Dual Chest Bellows Utility Pockets */}
-          <rect x="85" y="190" width="50" height="55" fill={secondaryFill} stroke={primaryStroke} strokeWidth="2" />
-          <polygon points="85,190 110,202 135,190" fill={neutralFill} stroke={primaryStroke} strokeWidth="1.8" />
-          <circle cx="110" cy="210" r="3" fill="#202421" />
-
-          <rect x="185" y="190" width="50" height="55" fill={secondaryFill} stroke={primaryStroke} strokeWidth="2" />
-          <polygon points="185,190 210,202 235,190" fill={neutralFill} stroke={primaryStroke} strokeWidth="1.8" />
-          <circle cx="210" cy="210" r="3" fill="#202421" />
-
-          {/* Red Bar-Tack Stress Reinforcements */}
-          <line x1="83" y1="192" x2="91" y2="192" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-          <line x1="129" y1="192" x2="137" y2="192" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-          <line x1="183" y1="192" x2="191" y2="192" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
-          <line x1="229" y1="192" x2="237" y2="192" stroke={accentRed} strokeWidth="3" strokeLinecap="round" />
         </g>
       )}
 
       {id === 'branded' && (
         <g className="garment-group-branded">
-          {/* Piqué Polo Shirt Body & Sleeves */}
+          {/* Piqué polo shirt silhouette */}
           <path
-            d="M 115 65 L 45 110 L 30 220 L 70 215 L 75 145 L 70 345 L 210 345 L 205 145 L 210 215 L 250 220 L 235 110 L 165 65 Z"
-            fill={neutralFill}
-            stroke={primaryStroke}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
-
-          {/* Ribbed Polo Collar with Brand Red Tipping */}
-          <path
-            d="M 115 65 L 98 120 L 140 120 L 140 78 L 165 65 Z"
-            fill={secondaryFill}
-            stroke={primaryStroke}
-            strokeWidth="2"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 165 65 L 182 120 L 140 120 L 140 78 Z"
-            fill={secondaryFill}
-            stroke={primaryStroke}
-            strokeWidth="2"
-            strokeLinejoin="round"
-          />
-          {/* Collar edge accent tipping */}
-          <path d="M 98 120 L 140 120" stroke={accentRed} strokeWidth="2.5" />
-          <path d="M 140 120 L 182 120" stroke={accentRed} strokeWidth="2.5" />
-
-          {/* Front Button Box Placket */}
-          <rect x="130" y="78" width="20" height="65" fill="#ffffff" stroke={primaryStroke} strokeWidth="2" />
-          <circle cx="140" cy="94" r="3" fill="#202421" />
-          <circle cx="140" cy="116" r="3" fill="#202421" />
-          <circle cx="140" cy="134" r="3" fill="#202421" />
-
-          {/* Left Chest 3D Puff Embroidery Badge */}
-          <circle cx="95" cy="165" r="14" fill={accentRed} stroke={primaryStroke} strokeWidth="1.8" />
-          <path
-            d="M 95 158 C 91 158 88 161 88 165 C 88 169 91 172 95 172 C 99 172 102 169 102 165 Z M 98 168 L 102 172"
-            stroke="#ffffff"
-            strokeWidth="2"
+            d="M102 87 Q112 83 123 81 L140 93 L157 81 Q166 83 178 87 L220 114 L236 167 L206 179 L184 137 L185 310 Q140 320 95 310 L96 137 L74 179 L44 167 L60 114 Z"
+            fill={garmentFill}
+            stroke={outStroke}
+            strokeWidth="2.6"
             strokeLinecap="round"
+            strokeLinejoin="round"
           />
+          {/* Armhole seams & ribbed sleeve cuffs */}
+          <path d="M96 137 L60 114 M184 137 L220 114" stroke={lineStroke} strokeWidth="1.8" strokeLinecap="round" />
+          {/* Ribbed polo collar with stand */}
+          <path
+            d="M123 81 Q140 87 157 81 L140 101 Z"
+            fill="#f7f7f4"
+            stroke={outStroke}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M123 81 L140 101 L125 124 L111 99 Z M157 81 L140 101 L155 124 L169 99 Z"
+            fill="#ffffff"
+            stroke={outStroke}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Front button box placket */}
+          <rect
+            x="133"
+            y="101"
+            width="14"
+            height="58"
+            rx="1"
+            fill="#ffffff"
+            stroke={lineStroke}
+            strokeWidth="1.7"
+          />
+          <circle cx="140" cy="119" r="2.2" fill="#36424c" />
+          <circle cx="140" cy="139" r="2.2" fill="#36424c" />
+          {/* Twin-needle hem & cuff stitch lines */}
+          <path
+            d="M97 303 Q140 312 184 303 M48 162 L73 173 M207 173 L232 162"
+            stroke={stitchStroke}
+            strokeWidth="1.2"
+            strokeDasharray="3 4"
+          />
+          {/* Restrained left-chest embroidery placement indicator (no fake vector logo) */}
+          <rect x="155" y="146" width="18" height="12" rx="1.5" fill={accentRed} opacity="0.82" />
 
-          {/* Structured 6-Panel Cap (Lower Right) */}
-          <g transform="translate(190, 220)">
-            {/* Cap Crown */}
+          {/* Separate structured 6-panel twill cap */}
+          <g transform="translate(172 232) scale(0.64)">
+            {/* Crown dome */}
             <path
-              d="M 10 75 C 10 30 55 10 85 20 C 105 28 115 50 115 75 Z"
-              fill={neutralFill}
-              stroke={primaryStroke}
-              strokeWidth="2.2"
-              strokeLinejoin="round"
-            />
-            {/* Crown Seam Lines converging at top button */}
-            <path d="M 60 15 L 10 75" stroke={primaryStroke} strokeWidth="1.5" />
-            <path d="M 60 15 L 60 75" stroke={primaryStroke} strokeWidth="1.5" />
-            <path d="M 60 15 L 110 75" stroke={primaryStroke} strokeWidth="1.5" />
-
-            {/* Top Eyelet Button */}
-            <circle cx="60" cy="15" r="4" fill={accentRed} stroke={primaryStroke} strokeWidth="1.5" />
-
-            {/* Embroidered Eyelets on Crown */}
-            <circle cx="35" cy="45" r="2" fill="#202421" />
-            <circle cx="85" cy="45" r="2" fill="#202421" />
-
-            {/* Front Crown Brand Patch */}
-            <rect x="42" y="42" width="36" height="22" fill={secondaryFill} stroke={accentRed} strokeWidth="1.8" />
-            <circle cx="60" cy="53" r="6" fill={accentRed} />
-
-            {/* Curved Visor / Brim with Red Sandwich Accent */}
-            <path
-              d="M 5 75 C 30 95 90 95 125 75 C 115 88 85 100 45 100 C 15 100 0 88 5 75 Z"
+              d="M10 67 Q20 15 75 13 Q128 18 137 67 Z"
               fill={secondaryFill}
-              stroke={primaryStroke}
-              strokeWidth="2.2"
+              stroke={outStroke}
+              strokeWidth="2.6"
               strokeLinejoin="round"
             />
-            <path d="M 10 84 C 40 98 85 96 115 80" stroke={accentRed} strokeWidth="2.5" />
+            {/* Top squatchee button & panel seams */}
+            <circle cx="75" cy="12" r="4" fill={outStroke} />
+            <path
+              d="M75 13 V67 M75 13 Q37 29 25 67 M75 13 Q112 31 122 67"
+              stroke={lineStroke}
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+            {/* Breathable stitched eyelets */}
+            <circle cx="48" cy="36" r="2.2" fill={lineStroke} />
+            <circle cx="101" cy="36" r="2.2" fill={lineStroke} />
+            {/* Curved stitched visor */}
+            <path
+              d="M10 67 Q77 93 149 66 Q140 90 97 101 Q38 106 10 67 Z"
+              fill={secondaryFill}
+              stroke={outStroke}
+              strokeWidth="2.6"
+              strokeLinejoin="round"
+            />
+            <path d="M21 75 Q73 96 133 77" stroke={stitchStroke} strokeWidth="1.5" strokeDasharray="3 4" />
           </g>
         </g>
       )}
     </svg>
   );
 }
+

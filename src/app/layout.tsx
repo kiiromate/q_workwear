@@ -15,9 +15,17 @@ export const metadata: Metadata = {
   keywords: config.keywords,
   authors: [{ name: 'Quddus & Tinah' }],
   creator: 'Q Workwear',
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/',
+      fr: '/fr',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_RW',
+    alternateLocale: ['fr_RW'],
     url: config.siteUrl,
     title: `${siteConfig.name} | Custom Workwear & Uniforms in Kigali`,
     description: siteConfig.description,
@@ -51,11 +59,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="flex min-h-full flex-col antialiased">
-        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
   );
 }
+
