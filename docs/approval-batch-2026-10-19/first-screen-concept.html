@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q Workwear — first-screen study (approval only)</title>
+<style>
+:root{--ink:#202421;--red:#b73329;--paper:#fafaf8;--line:#e2e0db}
+*{box-sizing:border-box}html{font-family:system-ui,Arial,sans-serif;background:var(--paper);color:var(--ink)}body{margin:0}a{color:inherit}button{font:inherit}
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem clamp(1.2rem,5vw,5rem);border-bottom:1px solid var(--line)}.identity{display:flex;gap:.6rem;align-items:center;font-size:1.1rem;font-weight:700;text-decoration:none}.identity img{width:33px;height:38px;object-fit:contain}nav{display:flex;align-items:center;gap:1.4rem}nav a{text-decoration:none;font-size:.9rem}nav a:hover,nav a:focus-visible{text-decoration:underline}.quote{background:var(--red);color:white;padding:.7rem 1rem;text-decoration:none}
+header .menu-toggle{display:none;border:1px solid var(--ink);padding:.55rem;background:none}.wrap{padding:1.5rem clamp(1.2rem,5vw,5rem)}.intro{display:flex;align-items:end;justify-content:space-between;gap:1rem;padding:1.5rem 0}.intro h1{font-size:clamp(2.4rem,5.3vw,5.9rem);letter-spacing:-.05em;line-height:.96;font-weight:550;margin:0}.intro p{max-width:29ch;line-height:1.4;font-size:1.12rem;margin:0 0 .2rem;color:#4f514c}
+.hero{display:grid;grid-template-columns:1fr;position:relative;min-height:clamp(370px,51vw,680px);background:#21272c;overflow:hidden;color:white}.photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .48s ease;opacity:1}.photo.fading{opacity:.55}.overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,10,.70),rgba(8,10,10,.08) 65%,rgba(8,10,10,.12))}
+.hero-content{position:relative;z-index:1;align-self:end;padding:clamp(1.5rem,5vw,5rem);max-width:700px}.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;opacity:.9}.hero-content h2{font-size:clamp(2rem,4.2vw,4.4rem);line-height:1;letter-spacing:-.04em;font-weight:550;margin:1rem 0}.hero-content p{font-size:1.07rem;line-height:1.45;max-width:39ch}.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}.button{min-height:48px;display:inline-flex;align-items:center;padding:.82rem 1rem;background:white;color:var(--ink);font-weight:600;text-decoration:none}.button.outline{background:transparent;border:1px solid white;color:white}
+.controlbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}.slide-nav{display:flex;gap:.7rem;align-items:center}.slide-nav button,.play{min-width:44px;min-height:44px;border:1px solid var(--line);background:transparent;cursor:pointer}.slide-nav button[aria-current=true]{border-color:var(--red);box-shadow:inset 0 -3px var(--red)}.play{padding:0 .8rem}.jump{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}.jump a{text-decoration:none;border-bottom:1px solid transparent;padding:.5rem 0;font-size:.86rem}.jump a:hover,.jump a:focus-visible{border-color:var(--ink)}.note{max-width:55ch;font-size:.8rem;color:#61645c;margin:.8rem 0}.focus-visible,:focus-visible{outline:3px solid #c14638;outline-offset:3px}
+@media(max-width:760px){header{padding:1rem}.menu-toggle{display:block!important}.identity{font-size:1rem}header nav{display:none}header nav.open{position:absolute;top:68px;left:0;right:0;background:var(--paper);z-index:9;display:flex;flex-direction:column;align-items:stretch;padding:1rem;box-shadow:0 10px 16px #0001}.intro{display:block;padding:.7rem 0 1.1rem}.intro h1{font-size:clamp(2.45rem,10vw,3.4rem)}.intro p{font-size:.95rem;margin-top:1rem}.wrap{padding:1.1rem}.hero{min-height:490px}.photo{background-position:55% center}.overlay{background:linear-gradient(0deg,rgba(8,10,10,.84),rgba(8,10,10,.0) 85%)}.hero-content{padding:1.2rem}.hero-content h2{font-size:2.35rem}.hero-content p{font-size:.97rem}.controlbar{display:block}.slide-nav{justify-content:space-between}.jump{padding:1rem 0}}
+@media(prefers-reduced-motion:reduce){.photo{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="identity" href="/" aria-label="Q Workwear home"><img src="../../public/images/logo/q-mark-red.png" alt=""><span>Q Workwear</span></a>
+  <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav id="main-nav" aria-label="Main navigation"><a href="/products">Collections</a><a href="/work">Lookbook</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/contact" class="quote">Request a quote</a></nav>
+</header>
+<main class="wrap">
+ <div class="intro"><h1>Workwear, made<br>for your team.</h1><p>Uniforms designed around your team, your work and your identity. Made to order in Kigali.</p></div>
+ <section class="hero" aria-roledescription="slideshow" aria-label="Uniform collections">
+  <div class="photo" id="hero-photo" aria-hidden="true"></div><div class="overlay" aria-hidden="true"></div>
+  <div class="hero-content"><span class="eyebrow" id="slide-count">01 / 04</span><h2 id="hero-title">Corporate uniforms</h2><p id="hero-desc">Tailored officewear, shirts and front-of-house uniforms.</p><div class="actions"><a class="button" id="hero-link" href="/products?category=corporate">Explore corporate</a><a class="button outline" href="/contact">Discuss an order</a></div></div>
+ </section>
+ <div class="controlbar">
+  <div class="slide-nav" aria-label="Choose a visual"><button id="prev" aria-label="Previous collection">←</button><button data-slide="0" aria-current="true">01</button><button data-slide="1" aria-current="false">02</button><button data-slide="2" aria-current="false">03</button><button data-slide="3" aria-current="false">04</button><button id="next" aria-label="Next collection">→</button><button class="play" id="pause" aria-pressed="false">Pause</button></div>
+  <div class="jump" id="categories" aria-label="Direct collection links"><a href="/products?category=corporate">Corporate</a><a href="/products?category=hospitality">Hospitality</a><a href="/products?category=industrial">Industrial</a><a href="/products?category=branded">Branded apparel</a></div>
+ </div>
+ <p class="note">Approval prototype, not the public website. Visuals are illustrative concepts; the logo application and final product availability require confirmation. Direct category routes are always available, independently of the slideshow. Run inside the actual site server to test navigation.</p>
+</main>
+<script>
+const dir="../review-evidence-2026-10-19/masters/";
+const slides=[
+{title:"Corporate uniforms",desc:"Tailored officewear, shirts and front-of-house uniforms.",file:"C01_master.jpg",slug:"corporate"},
+{title:"Hospitality uniforms",desc:"Chef jackets, aprons and servicewear for your team.",file:"HOS01_master.jpg",slug:"hospitality"},
+{title:"Industrial workwear",desc:"Practical work jackets, overalls and visibility-focused options.",file:"IND01_master.jpg",slug:"industrial"},
+{title:"Branded apparel",desc:"Polos, T-shirts and caps personalized for your organisation.",file:"BR01_master.jpg",slug:"branded"}];
+const photo=document.querySelector("#hero-photo"),count=document.querySelector("#slide-count"),title=document.querySelector("#hero-title"),desc=document.querySelector("#hero-desc"),link=document.querySelector("#hero-link"),pause=document.querySelector("#pause");
+const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let index=0,paused=reduce,timer=null;
+function setSlide(n){index=(n+slides.length)%slides.length;const x=slides[index];photo.classList.add("fading");const img=new Image();img.onload=()=>{photo.style.backgroundImage='url("'+dir+x.file+'")';photo.classList.remove("fading")};img.src=dir+x.file;count.textContent=String(index+1).padStart(2,"0")+" / 04";title.textContent=x.title;desc.textContent=x.desc;link.textContent="Explore "+x.slug;link.href="/products?category="+x.slug;document.querySelectorAll("[data-slide]").forEach(b=>b.setAttribute("aria-current",String(Number(b.dataset.slide)===index)));}
+function syncTimer(){clearInterval(timer);pause.textContent=paused?"Play":"Pause";pause.setAttribute("aria-pressed",String(paused));if(!paused)timer=setInterval(()=>setSlide(index+1),6500)}
+document.querySelectorAll("[data-slide]").forEach(b=>b.addEventListener("click",()=>{setSlide(Number(b.dataset.slide));syncTimer()}));
+document.querySelector("#prev").addEventListener("click",()=>{setSlide(index-1);syncTimer()});document.querySelector("#next").addEventListener("click",()=>{setSlide(index+1);syncTimer()});pause.addEventListener("click",()=>{paused=!paused;syncTimer()});
+const menu=document.querySelector("#menu-toggle"),nav=document.querySelector("#main-nav");menu.addEventListener("click",()=>{const open=menu.getAttribute("aria-expanded")!=="true";menu.setAttribute("aria-expanded",String(open));nav.classList.toggle("open",open)});nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&nav.classList.contains("open")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.focus()}});
+photo.style.backgroundImage='url("'+dir+slides[0].file+'")';document.addEventListener("visibilitychange",()=>{if(document.hidden){clearInterval(timer)}else{syncTimer()}});document.querySelector(".hero").addEventListener("focusin",()=>clearInterval(timer));document.querySelector(".hero").addEventListener("focusout",()=>syncTimer());syncTimer();
+</script>
+</body>
+</html>
